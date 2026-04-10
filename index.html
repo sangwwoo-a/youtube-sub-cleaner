@@ -1,490 +1,200 @@
-
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youtube Sub Cleaner</title>
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Devkorea1m — Android 앱을 만듭니다</title>
+    <style>
+          *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root {
-  --red: #FF4444;
-  --red-light: #fff0f0;
-  --red-mid: #ffcccc;
-  --gray-100: #f7f7f7;
-  --gray-200: #eeeeee;
-  --gray-400: #aaaaaa;
-  --gray-600: #666666;
-  --gray-900: #111111;
-  --white: #ffffff;
-  --radius: 14px;
-  --radius-sm: 8px;
-}
+          :root {
+                  --red: #FF4444;
+                  --red-light: #fff0f0;
+                  --blue: #3B82F6;
+                  --blue-light: #EFF6FF;
+                  --gray-100: #f7f7f7;
+                  --gray-200: #eeeeee;
+                  --gray-600: #666666;
+                  --gray-900: #111111;
+                  --white: #ffffff;
+                  --radius: 16px;
+          }
 
-html { scroll-behavior: smooth; }
+          html { scroll-behavior: smooth; }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Pretendard', 'Segoe UI', sans-serif;
-  color: var(--gray-900);
-  background: var(--white);
-  line-height: 1.7;
-}
+          body {
+                  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+                  color: var(--gray-900);
+                  background: var(--gray-100);
+                  line-height: 1.7;
+          }
 
-a { color: inherit; text-decoration: none; }
+          a { color: inherit; text-decoration: none; }
 
-/* NAV */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--gray-200);
-  padding: 0 2rem;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 56px;
-}
-.nav-logo { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
-.nav-logo span { color: var(--red); }
-.nav-links { display: flex; gap: 1.5rem; font-size: 13px; color: var(--gray-600); }
-.nav-links a:hover { color: var(--gray-900); }
+          /* NAV */
+          nav {
+                  position: sticky; top: 0; z-index: 100;
+                  background: rgba(255,255,255,0.92);
+                  backdrop-filter: blur(8px);
+                  border-bottom: 1px solid var(--gray-200);
+                  padding: 0 2rem;
+                  display: flex; align-items: center; justify-content: space-between;
+                  height: 56px;
+          }
+          .nav-logo {
+                  font-size: 17px; font-weight: 700; letter-spacing: -0.3px;
+                  color: var(--gray-900);
+          }
+          .nav-logo span { color: var(--blue); }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 5rem 1.5rem 4rem;
-  max-width: 680px;
-  margin: 0 auto;
-}
-.hero-badge {
-  display: inline-block;
-  font-size: 12px; font-weight: 500;
-  padding: 4px 14px;
-  border-radius: 20px;
-  background: var(--red-light);
-  color: var(--red);
-  margin-bottom: 1.25rem;
-  border: 1px solid var(--red-mid);
-}
-.hero h1 {
-  font-size: clamp(28px, 5vw, 44px);
-  font-weight: 700;
-  letter-spacing: -0.8px;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-.hero h1 span { color: var(--red); }
-.hero p {
-  font-size: 16px;
-  color: var(--gray-600);
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-.hero-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: var(--red); color: var(--white);
-  padding: 12px 24px; border-radius: var(--radius-sm);
-  font-size: 14px; font-weight: 500;
-  transition: opacity .15s;
-}
-.btn-primary:hover { opacity: 0.88; }
-.btn-secondary {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: var(--gray-100); color: var(--gray-900);
-  padding: 12px 24px; border-radius: var(--radius-sm);
-  font-size: 14px; font-weight: 500;
-  border: 1px solid var(--gray-200);
-  transition: background .15s;
-}
-.btn-secondary:hover { background: var(--gray-200); }
+          /* HERO */
+          .hero {
+                  text-align: center;
+                  padding: 72px 24px 56px;
+          }
+          .hero-badge {
+                  display: inline-block;
+                  background: var(--blue-light);
+                  color: var(--blue);
+                  font-size: 13px; font-weight: 600;
+                  padding: 4px 14px; border-radius: 99px;
+                  margin-bottom: 20px;
+          }
+          .hero h1 {
+                  font-size: clamp(28px, 5vw, 44px);
+                  font-weight: 800; letter-spacing: -1px;
+                  line-height: 1.2;
+                  color: var(--gray-900);
+                  margin-bottom: 16px;
+          }
+          .hero p {
+                  font-size: 16px; color: var(--gray-600);
+                  max-width: 480px; margin: 0 auto;
+          }
 
-/* DIVIDER */
-.section-divider {
-  width: 40px; height: 3px;
-  background: var(--red);
-  border-radius: 2px;
-  margin: 0 auto 1rem;
-}
+          /* CARDS */
+          .cards-section {
+                  padding: 0 24px 80px;
+                  max-width: 900px;
+                  margin: 0 auto;
+          }
+          .cards-grid {
+                  display: grid;
+                  grid-template-columns: 1fr;
+                  gap: 24px;
+          }
+          @media (min-width: 640px) {
+                  .cards-grid { grid-template-columns: 1fr 1fr; }
+          }
 
-/* PROBLEM */
-.problem {
-  background: var(--gray-100);
-  padding: 4rem 1.5rem;
-  text-align: center;
-}
-.problem h2 { font-size: 22px; font-weight: 600; margin-bottom: .5rem; }
-.problem p { font-size: 15px; color: var(--gray-600); max-width: 540px; margin: 0 auto 2rem; }
-.problem-cards {
-  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-  max-width: 680px; margin: 0 auto;
-}
-.problem-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
-  flex: 1; min-width: 180px; max-width: 220px;
-  text-align: left;
-}
-.problem-icon { font-size: 22px; margin-bottom: 8px; }
-.problem-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-.problem-card p { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+          .app-card {
+                  background: var(--white);
+                  border-radius: var(--radius);
+                  padding: 36px 32px;
+                  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+                  transition: transform 0.2s, box-shadow 0.2s;
+                  display: flex; flex-direction: column; gap: 12px;
+          }
+          .app-card:hover {
+                  transform: translateY(-4px);
+                  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+          }
 
-/* HOW IT WORKS */
-.how { padding: 4rem 1.5rem; text-align: center; max-width: 760px; margin: 0 auto; }
-.how h2 { font-size: 22px; font-weight: 600; margin-bottom: .5rem; }
-.how > p { font-size: 15px; color: var(--gray-600); margin-bottom: 2.5rem; }
-.steps { display: flex; gap: 0; justify-content: center; flex-wrap: wrap; position: relative; }
-.step {
-  flex: 1; min-width: 140px; max-width: 180px;
-  text-align: center; padding: 0 1rem;
-  position: relative;
-}
-.step:not(:last-child)::after {
-  content: '→';
-  position: absolute; right: -10px; top: 20px;
-  font-size: 18px; color: var(--gray-400);
-}
-.step-num {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  background: var(--red); color: var(--white);
-  font-size: 16px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 10px;
-}
-.step h3 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-.step p { font-size: 12px; color: var(--gray-600); line-height: 1.5; }
+          .card-icon { font-size: 40px; }
+          .card-title {
+                  font-size: 20px; font-weight: 700; letter-spacing: -0.3px;
+          }
+          .card-desc {
+                  font-size: 15px; color: var(--gray-600); flex: 1;
+                  line-height: 1.6;
+          }
 
-/* FEATURES */
-.features {
-  background: var(--gray-100);
-  padding: 4rem 1.5rem;
-  text-align: center;
-}
-.features h2 { font-size: 22px; font-weight: 600; margin-bottom: .5rem; }
-.features > p { font-size: 15px; color: var(--gray-600); margin-bottom: 2.5rem; }
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-  max-width: 760px;
-  margin: 0 auto;
-}
-.feature-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  text-align: left;
-}
-.feature-icon { font-size: 24px; margin-bottom: 10px; }
-.feature-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
-.feature-card p { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+          .card-btn {
+                  display: inline-flex; align-items: center; gap: 6px;
+                  margin-top: 8px;
+                  padding: 10px 20px;
+                  border-radius: 99px;
+                  font-size: 14px; font-weight: 600;
+                  transition: opacity 0.2s;
+                  width: fit-content;
+          }
+          .card-btn:hover { opacity: 0.85; }
 
-/* SAFETY */
-.safety {
-  padding: 4rem 1.5rem;
-  max-width: 680px;
-  margin: 0 auto;
-  text-align: center;
-}
-.safety h2 { font-size: 22px; font-weight: 600; margin-bottom: .5rem; }
-.safety > p { font-size: 15px; color: var(--gray-600); margin-bottom: 2rem; }
-.safety-list {
-  display: flex; flex-direction: column; gap: 10px;
-  text-align: left;
-}
-.safety-item {
-  display: flex; align-items: flex-start; gap: 12px;
-  background: var(--gray-100);
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
-  border: 1px solid var(--gray-200);
-}
-.safety-check {
-  width: 20px; height: 20px; flex-shrink: 0;
-  background: #e8f5e9; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; color: #2e7d32; margin-top: 2px;
-}
-.safety-item p { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
-.safety-item strong { color: var(--gray-900); font-weight: 600; }
+          .card-ysc .card-title { color: var(--red); }
+          .card-ysc { border-top: 4px solid var(--red); }
+          .card-ysc .card-btn {
+                  background: var(--red);
+                  color: var(--white);
+          }
 
-/* EN SECTION */
-.en-section {
-  background: var(--gray-900);
-  color: var(--white);
-  padding: 4rem 1.5rem;
-  text-align: center;
-}
-.en-section .section-divider { background: var(--red); }
-.en-section h2 { font-size: 22px; font-weight: 600; margin-bottom: .5rem; color: var(--white); }
-.en-section > p { font-size: 15px; color: #aaa; margin-bottom: 2.5rem; }
-.en-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-  max-width: 760px;
-  margin: 0 auto 2.5rem;
-}
-.en-card {
-  background: #1e1e1e;
-  border: 1px solid #333;
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  text-align: left;
-}
-.en-card-icon { font-size: 22px; margin-bottom: 10px; }
-.en-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--white); }
-.en-card p { font-size: 13px; color: #999; line-height: 1.6; }
-.en-hero-text { max-width: 580px; margin: 0 auto; }
-.en-hero-text h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.25; margin-bottom: 1rem; color: var(--white); }
-.en-hero-text h1 span { color: var(--red); }
-.en-hero-text p { font-size: 15px; color: #aaa; margin-bottom: 2rem; }
+          .card-ww .card-title { color: var(--blue); }
+          .card-ww { border-top: 4px solid var(--blue); }
+          .card-ww .card-btn {
+                  background: var(--blue);
+                  color: var(--white);
+          }
 
-/* CTA */
-.cta {
-  padding: 4rem 1.5rem;
-  text-align: center;
-  background: var(--white);
-}
-.cta h2 { font-size: 22px; font-weight: 600; margin-bottom: .5rem; }
-.cta p { font-size: 15px; color: var(--gray-600); margin-bottom: 2rem; }
+          /* FOOTER */
+          footer {
+                  text-align: center;
+                  padding: 32px 24px;
+                  border-top: 1px solid var(--gray-200);
+                  background: var(--white);
+                  font-size: 14px;
+                  color: var(--gray-600);
+          }
+          footer a { color: var(--blue); }
+          footer a:hover { text-decoration: underline; }
+        </style>
+  </head>
+  <body>
 
-/* FOOTER */
-footer {
-  background: var(--gray-100);
-  border-top: 1px solid var(--gray-200);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  font-size: 12px;
-  color: var(--gray-400);
-}
-footer a { color: var(--gray-600); }
-footer a:hover { color: var(--gray-900); }
-.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: .5rem; flex-wrap: wrap; }
+    <nav>
+        <span class="nav-logo">Devkorea<span>1m</span></span>
+    </nav>
+  
+  <section class="hero">
+    <span class="hero-badge">Android 앱</span>
+    <h1>Android 앱을 만듭니다</h1>
+    <p>유용하고 심플한 앱으로 일상을 더 편리하게 만들어 드립니다.</p>
+  </section>section>
+  
+  <section class="cards-section">
+    <div class="cards-grid">
+    
+        <div class="app-card card-ysc">
+              <div class="card-icon">🧹</div>div>
+              <div class="card-title">Youtube Sub Cleaner</div>div>
+              <div class="card-desc">
+                      유튜브 구독 채널을 한 번에 정리하세요.<br>
+                      오래된 채널, 더 이상 보지 않는 채널을<br>
+                      빠르고 간편하게 정리할 수 있습니다.
+              </div>div>
+              <a class="card-btn" href="/privacy_policy.html">자세히 보기 →</a>a>
+        </div>div>
+    
+        <div class="app-card card-ww">
+              <div class="card-icon">🌦️</div>div>
+              <div class="card-title">WeatherWake</div>div>
+              <div class="card-desc">
+                      날씨 연동 알람 앱.<br>
+                      비 오는 날 알람이 먼저 움직입니다.<br>
+                      출근 준비 시간을 자동으로 조정해드려요.
+              </div>div>
+              <a class="card-btn" href="/weatherwake/">자세히 보기 →</a>a>
+        </div>div>
+    
+    </div>div>
+  </section>section>
+  
+  <footer>
+      <p>© 2026 Devkorea1m &nbsp;·&nbsp; <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a>a></p>p>
+  </footer>
 
-@media (max-width: 540px) {
-  .step:not(:last-child)::after { display: none; }
-  nav { padding: 0 1rem; }
-  .nav-links { gap: 1rem; }
-}
-</style>
-</head>
-<body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">Youtube <span>Sub</span> Cleaner</div>
-  <div class="nav-links">
-    <a href="#how">사용법</a>
-    <a href="#features">기능</a>
-    <a href="#english">English</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">Android 앱 · 무료</div>
-  <h1>유튜브 구독 채널,<br><span>한 번에 정리하세요</span></h1>
-  <p>오랫동안 영상을 올리지 않은 채널을 자동으로 분석하고<br>불필요한 구독을 손쉽게 일괄 취소할 수 있어요.</p>
-  <div class="hero-btns">
-    <a href="#how" class="btn-primary">사용법 보기</a>
-    <a href="#features" class="btn-secondary">기능 살펴보기</a>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section class="problem">
-  <div class="section-divider"></div>
-  <h2>이런 경험 있으신가요?</h2>
-  <p>구독 채널이 너무 많아 관리가 어렵고, 오래된 채널이 피드를 가득 채우고 있지는 않나요?</p>
-  <div class="problem-cards">
-    <div class="problem-card">
-      <div class="problem-icon">😴</div>
-      <h3>휴면 채널</h3>
-      <p>1년 넘게 영상을 올리지 않은 채널이 구독 목록에 가득</p>
-    </div>
-    <div class="problem-card">
-      <div class="problem-icon">📱</div>
-      <h3>Shorts 폭탄</h3>
-      <p>쇼츠만 올리는 채널 때문에 원하는 영상을 찾기 어려움</p>
-    </div>
-    <div class="problem-card">
-      <div class="problem-icon">😩</div>
-      <h3>일일이 취소</h3>
-      <p>채널마다 하나씩 취소해야 해서 시간이 너무 오래 걸림</p>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="section-divider"></div>
-  <h2>이렇게 사용해요</h2>
-  <p>4단계만으로 구독 목록을 깔끔하게 정리할 수 있어요.</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>Google 로그인</h3>
-      <p>내 YouTube 계정으로 안전하게 로그인</p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>기간 설정</h3>
-      <p>몇 개월 이상 업로드 없는 채널을 정리할지 설정</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>자동 분석</h3>
-      <p>앱이 채널별 마지막 업로드 날짜를 자동으로 분석</p>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <h3>일괄 취소</h3>
-      <p>선택된 채널을 한 번에 구독 취소</p>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="features" id="features">
-  <div class="section-divider"></div>
-  <h2>주요 기능</h2>
-  <p>구독 정리에 필요한 모든 기능을 담았어요.</p>
-  <div class="feature-grid">
-    <div class="feature-card">
-      <div class="feature-icon">🔍</div>
-      <h3>실시간 채널 분석</h3>
-      <p>구독 목록을 불러오는 동시에 채널별 마지막 업로드 날짜를 실시간으로 분석해요.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🎨</div>
-      <h3>색상으로 한눈에</h3>
-      <p>삭제 대상은 빨간색, 유지할 채널은 녹색으로 표시해 직관적으로 파악할 수 있어요.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">☑️</div>
-      <h3>전체 선택 / 해제</h3>
-      <p>자동 선택된 채널을 전체 선택하거나, 원하는 채널만 직접 골라서 취소할 수 있어요.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📅</div>
-      <h3>기간 필터</h3>
-      <p>1~24개월 범위에서 기준 기간을 자유롭게 설정할 수 있어요.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🩳</div>
-      <h3>Shorts 채널 제외</h3>
-      <p>Shorts 위주의 채널을 따로 걸러낼 수 있는 필터를 제공해요.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <h3>일괄 구독 취소</h3>
-      <p>선택한 채널을 한 번에 일괄 취소해요. 광고 시청 후 실행됩니다.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SAFETY -->
-<section class="safety">
-  <div class="section-divider"></div>
-  <h2>안전하게 사용하세요</h2>
-  <p>개인정보와 계정 보안을 최우선으로 생각해요.</p>
-  <div class="safety-list">
-    <div class="safety-item">
-      <div class="safety-check">✓</div>
-      <p><strong>비밀번호를 요구하지 않아요.</strong> Google 공식 OAuth 2.0 방식으로만 로그인합니다.</p>
-    </div>
-    <div class="safety-item">
-      <div class="safety-check">✓</div>
-      <p><strong>외부 서버에 데이터를 저장하지 않아요.</strong> 모든 정보는 사용자 기기 안에만 존재합니다.</p>
-    </div>
-    <div class="safety-item">
-      <div class="safety-check">✓</div>
-      <p><strong>사용자가 선택한 채널만 취소해요.</strong> 자동으로 임의 취소하는 기능은 없습니다.</p>
-    </div>
-    <div class="safety-item">
-      <div class="safety-check">✓</div>
-      <p><strong>언제든지 연동 해제 가능해요.</strong> Google 계정 설정에서 권한을 직접 취소할 수 있습니다.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ENGLISH SECTION -->
-<section class="en-section" id="english">
-  <div class="en-hero-text">
-    <div class="section-divider"></div>
-    <h1>Clean up your YouTube<br><span>subscriptions in minutes</span></h1>
-    <p>Youtube Sub Cleaner automatically analyzes your subscribed channels and helps you bulk unsubscribe from inactive ones — saving you time and keeping your feed fresh.</p>
-  </div>
-
-  <div class="en-cards">
-    <div class="en-card">
-      <div class="en-card-icon">📊</div>
-      <h3>Real-time analysis</h3>
-      <p>Fetches your subscription list and analyzes each channel's last upload date in real time.</p>
-    </div>
-    <div class="en-card">
-      <div class="en-card-icon">🎨</div>
-      <h3>Color-coded results</h3>
-      <p>Channels to remove are highlighted in red; channels to keep are shown in green.</p>
-    </div>
-    <div class="en-card">
-      <div class="en-card-icon">⚡</div>
-      <h3>Bulk unsubscribe</h3>
-      <p>Select all flagged channels and unsubscribe from them all in a single tap.</p>
-    </div>
-    <div class="en-card">
-      <div class="en-card-icon">🔒</div>
-      <h3>Privacy first</h3>
-      <p>No passwords collected. All data stays on your device. Google OAuth 2.0 only.</p>
-    </div>
-  </div>
-
-  <h2>How it works</h2>
-  <p style="color:#aaa;font-size:14px;margin-bottom:2rem;">Four simple steps to a cleaner subscription list.</p>
-  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:680px;margin:0 auto;">
-    <div style="flex:1;min-width:130px;max-width:160px;background:#1e1e1e;border:1px solid #333;border-radius:10px;padding:1rem;text-align:center;">
-      <div style="width:32px;height:32px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;margin:0 auto 8px;">1</div>
-      <p style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;">Sign in</p>
-      <p style="font-size:12px;color:#999;">Log in with your Google account</p>
-    </div>
-    <div style="flex:1;min-width:130px;max-width:160px;background:#1e1e1e;border:1px solid #333;border-radius:10px;padding:1rem;text-align:center;">
-      <div style="width:32px;height:32px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;margin:0 auto 8px;">2</div>
-      <p style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;">Set period</p>
-      <p style="font-size:12px;color:#999;">Choose how many months of inactivity</p>
-    </div>
-    <div style="flex:1;min-width:130px;max-width:160px;background:#1e1e1e;border:1px solid #333;border-radius:10px;padding:1rem;text-align:center;">
-      <div style="width:32px;height:32px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;margin:0 auto 8px;">3</div>
-      <p style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;">Auto analyze</p>
-      <p style="font-size:12px;color:#999;">App scans every channel automatically</p>
-    </div>
-    <div style="flex:1;min-width:130px;max-width:160px;background:#1e1e1e;border:1px solid #333;border-radius:10px;padding:1rem;text-align:center;">
-      <div style="width:32px;height:32px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;margin:0 auto 8px;">4</div>
-      <p style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;">Bulk remove</p>
-      <p style="font-size:12px;color:#999;">Unsubscribe all selected channels at once</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-  <div class="section-divider"></div>
-  <h2>지금 바로 정리해보세요</h2>
-  <p>무료로 사용할 수 있어요. Google 계정만 있으면 됩니다.</p>
-  <div class="hero-btns">
-    <a href="#" class="btn-primary">APK 다운로드</a>
-    <a href="privacy_policy.html" class="btn-secondary">개인정보처리방침</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-links">
-    <a href="privacy_policy.html">개인정보처리방침 / Privacy Policy</a>
-    <a href="terms_of_service.html">서비스 약관 / Terms of Service</a>
-    <a href="/cdn-cgi/l/email-protection#a6d5c7c8c1d1d1c9c99e92e6c1cbc7cfca88c5c9cb">문의 / Contact</a>
-  </div>
-  <p>© 2026 Youtube Sub Cleaner · Developer: sangwwoo · <a href="
+  </body>
+</html>html>
+  </footer></p></h1></span>
+    </nav>
+  </body>
+    </style></title>
+  </head>
