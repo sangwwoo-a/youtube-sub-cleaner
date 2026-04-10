@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구독 채널 클리너 — 서비스 이용 약관</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #FF4444; --gray-100: #f7f7f7; --gray-200: #eeeeee; --gray-600: #666; --gray-900: #111; --white: #fff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif; color: var(--gray-900); background: var(--gray-100); line-height: 1.8; font-size: 15px; }
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-200); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; font-size: 14px; }
+    .nav-logo { font-size: 16px; font-weight: 700; }
+    .nav-logo span { color: var(--red); }
+    .nav-back { color: var(--gray-600); font-size: 13px; }
+    .nav-back:hover { color: var(--gray-900); text-decoration: none; }
+    .hero { background: var(--red); color: white; text-align: center; padding: 48px 24px 40px; }
+    .hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+    .hero p { font-size: 14px; opacity: 0.85; }
+    .container { max-width: 760px; margin: 40px auto 80px; padding: 0 24px; display: flex; flex-direction: column; gap: 24px; }
+    .card { background: var(--white); border-radius: 12px; border: 1px solid var(--gray-200); overflow: hidden; }
+    .card-head { padding: 16px 22px; border-bottom: 1px solid var(--gray-200); background: var(--gray-100); display: flex; align-items: center; gap: 10px; }
+    .card-num { width: 26px; height: 26px; background: var(--red); color: white; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+    .card-head h2 { font-size: 15px; font-weight: 700; }
+    .card-body { padding: 22px; color: #374151; font-size: 14.5px; }
+    .card-body p { margin-bottom: 12px; }
+    .card-body p:last-child { margin-bottom: 0; }
+    .card-body ul { padding-left: 20px; margin-top: 8px; }
+    .card-body ul li { margin-bottom: 6px; }
+    footer { text-align: center; padding: 28px 24px; border-top: 1px solid var(--gray-200); background: var(--white); font-size: 13px; color: var(--gray-600); }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
+    .footer-links a { color: var(--gray-600); }
+    .footer-links a:hover { color: var(--gray-900); text-decoration: underline; }
+    .lang-divider { text-align: center; padding: 12px 0 4px; color: var(--gray-600); font-size: 13px; letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Youtube <span>Sub</span> Cleaner</span>
+  <a class="nav-back" href="/">← devkorea1m.com</a>
+</nav>
+
+<div class="hero">
+  <h1>서비스 이용 약관</h1>
+  <p>개발자: Devkorea1m &nbsp;·&nbsp; 문의: sangwwoo84@gmail.com</p>
+</div>
+
+<div class="container">
+
+  <div class="lang-divider">🇰🇷 한국어</div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">1</div><h2>약관 동의</h2></div>
+    <div class="card-body">
+      <p>구독 채널 클리너(이하 "앱")를 설치하거나 사용함으로써 본 이용 약관에 동의하는 것으로 간주합니다. 약관에 동의하지 않으시면 앱을 사용하지 마십시오.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">2</div><h2>서비스 설명</h2></div>
+    <div class="card-body">
+      <p>앱은 사용자의 YouTube 구독 채널 목록을 분석하고 오랫동안 활동이 없는 채널을 식별하여 일괄 구독 취소를 도와주는 Android 애플리케이션입니다.</p>
+      <p>앱은 Google의 공식 YouTube Data API v3를 통해 구독 채널 정보를 조회하며, 사용자가 선택한 채널에 대해서만 구독 취소를 수행합니다.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">3</div><h2>Google 계정 및 OAuth 인증</h2></div>
+    <div class="card-body">
+      <p>앱은 Google OAuth 2.0을 통해 YouTube 계정에 접근합니다. 사용자는 로그인 과정에서 앱이 요청하는 권한 범위를 직접 확인하고 승인해야 합니다.</p>
+      <p>앱이 요청하는 권한은 구독 채널 조회 및 구독 취소에만 사용되며, 그 외 YouTube 데이터에는 접근하지 않습니다.</p>
+      <p>사용자는 언제든지 <a href="https://myaccount.google.com/permissions" target="_blank">Google 계정 설정</a>에서 앱의 접근 권한을 취소할 수 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">4</div><h2>사용자 책임</h2></div>
+    <div class="card-body">
+      <p>구독 취소는 사용자가 직접 선택하여 실행하는 기능이며, 실행 후 취소된 구독은 앱에서 되돌릴 수 없습니다.</p>
+      <ul>
+        <li>구독 취소 전 선택 항목을 반드시 확인하시기 바랍니다.</li>
+        <li>앱의 오사용으로 인한 구독 취소에 대해 개발자는 책임지지 않습니다.</li>
+        <li>앱은 사용자의 명시적 선택에 의해서만 구독 취소를 수행하며, 자동으로 임의 취소하지 않습니다.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">5</div><h2>광고</h2></div>
+    <div class="card-body">
+      <p>앱은 Google AdMob을 통해 광고를 제공합니다. 일괄 구독 취소 기능 실행 시 광고 시청이 필요할 수 있습니다.</p>
+      <p>광고는 Google의 개인정보처리방침(<a href="https://policies.google.com" target="_blank">policies.google.com</a>)에 따라 운영됩니다.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">6</div><h2>서비스 제한 및 면책</h2></div>
+    <div class="card-body">
+      <p>앱은 YouTube Data API v3의 할당량 및 정책에 따라 운영됩니다. API 정책 변경 또는 할당량 초과로 인해 서비스 일부가 제한될 수 있습니다.</p>
+      <p>개발자는 다음에 대해 책임을 지지 않습니다:</p>
+      <ul>
+        <li>YouTube 또는 Google의 정책 변경으로 인한 기능 제한</li>
+        <li>네트워크 오류 또는 서버 장애로 인한 서비스 중단</li>
+        <li>앱 사용으로 인해 발생하는 간접적 손해</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">7</div><h2>약관 변경</h2></div>
+    <div class="card-body">
+      <p>개발자는 필요에 따라 본 약관을 수정할 수 있으며, 변경된 약관은 앱 업데이트 또는 공지를 통해 안내됩니다. 변경 후에도 앱을 계속 사용하시면 변경된 약관에 동의하는 것으로 간주합니다.</p>
+      <p>최종 업데이트: 2026년 4월 8일</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">8</div><h2>문의</h2></div>
+    <div class="card-body">
+      <p>서비스 관련 문의: <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div class="lang-divider">🇺🇸 English</div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">1</div><h2>Acceptance of Terms</h2></div>
+    <div class="card-body">
+      <p>By installing or using 구독 채널 클리너 ("the App"), you agree to these Terms of Service. If you do not agree, please do not use the App.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">2</div><h2>Service Description</h2></div>
+    <div class="card-body">
+      <p>The App is an Android application that analyzes your YouTube subscription list, identifies channels with long periods of inactivity, and helps you unsubscribe from them in bulk.</p>
+      <p>The App uses Google's official YouTube Data API v3 to retrieve subscription data and performs unsubscriptions only for channels explicitly selected by the user.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">3</div><h2>Google Account &amp; OAuth</h2></div>
+    <div class="card-body">
+      <p>The App accesses your YouTube account via Google OAuth 2.0. During login, you will be shown the exact permissions the App requests and must approve them explicitly.</p>
+      <p>The permissions granted are used solely to list your subscriptions and to unsubscribe from channels you select. The App does not access any other YouTube data.</p>
+      <p>You may revoke the App's access at any time from your <a href="https://myaccount.google.com/permissions" target="_blank">Google Account settings</a>.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">4</div><h2>User Responsibility</h2></div>
+    <div class="card-body">
+      <p>Unsubscribing is an action initiated solely by the user. Once performed, unsubscriptions cannot be undone within the App.</p>
+      <ul>
+        <li>Please review your selected channels carefully before confirming.</li>
+        <li>The developer is not responsible for unintended unsubscriptions resulting from user error.</li>
+        <li>The App never unsubscribes from channels without the user's explicit selection.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">5</div><h2>Advertising</h2></div>
+    <div class="card-body">
+      <p>The App uses Google AdMob to serve advertisements. Watching an ad may be required to use the bulk unsubscribe feature.</p>
+      <p>Ads are governed by Google's Privacy Policy at <a href="https://policies.google.com" target="_blank">policies.google.com</a>.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">6</div><h2>Limitations &amp; Disclaimer</h2></div>
+    <div class="card-body">
+      <p>The App operates within the quotas and policies of YouTube Data API v3. Certain features may be limited due to API policy changes or quota restrictions.</p>
+      <p>The developer is not liable for:</p>
+      <ul>
+        <li>Feature limitations caused by changes to YouTube or Google policies</li>
+        <li>Service interruptions caused by network errors or server failures</li>
+        <li>Indirect damages arising from the use of the App</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">7</div><h2>Changes to Terms</h2></div>
+    <div class="card-body">
+      <p>The developer may update these Terms as needed. Changes will be communicated through app updates or notices. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
+      <p>Last updated: April 8, 2026</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-num">8</div><h2>Contact</h2></div>
+    <div class="card-body">
+      <p>For inquiries: <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a></p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/youtubesubcleaner/">Youtube Sub Cleaner</a>
+    <a href="/youtubesubcleaner/privacy-policy.html">개인정보처리방침</a>
+    <a href="mailto:sangwwoo84@gmail.com">문의</a>
+    <a href="/">← devkorea1m.com</a>
+  </div>
+  <p>© 2026 Devkorea1m</p>
+</footer>
+
+</body>
+</html>
