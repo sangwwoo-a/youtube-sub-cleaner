@@ -3,67 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youtube Sub Cleaner</title>
+  <title>WeatherWake â ë ì¨ ì°ë ìë ì±</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --red: #FF4444; --red-light: #fff0f0; --red-dark: #cc0000;
+      --blue: #3B82F6; --blue-light: #EFF6FF; --blue-dark: #1D4ED8;
       --gray-100: #f7f7f7; --gray-200: #eeeeee; --gray-300: #dddddd;
       --gray-600: #666666; --gray-900: #111111;
-      --green-light: #e8f5e9; --white: #ffffff; --radius: 12px;
+      --white: #ffffff; --radius: 12px;
     }
     html { scroll-behavior: smooth; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif; color: var(--gray-900); background: var(--gray-100); line-height: 1.7; }
     a { color: inherit; text-decoration: none; }
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-200); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 2rem; display: flex; align-items: center;
+      justify-content: space-between; height: 56px;
+    }
     .nav-logo { font-size: 17px; font-weight: 700; }
-    .nav-logo span { color: var(--red); }
+    .nav-logo span { color: var(--blue); }
     .nav-links { display: flex; gap: 24px; font-size: 14px; color: var(--gray-600); }
     .nav-links a:hover { color: var(--gray-900); }
     .nav-back { font-size: 13px; color: var(--gray-600); }
     .nav-back:hover { color: var(--gray-900); }
+
+    /* HERO */
     .hero { text-align: center; padding: 72px 24px 56px; }
-    .hero-badge { display: inline-block; background: var(--red-light); color: var(--red); font-size: 13px; font-weight: 600; padding: 4px 14px; border-radius: 99px; margin-bottom: 20px; }
+    .hero-badge {
+      display: inline-block; background: var(--blue-light); color: var(--blue);
+      font-size: 13px; font-weight: 600; padding: 4px 14px;
+      border-radius: 99px; margin-bottom: 20px;
+    }
     .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px; }
-    .hero h1 span { color: var(--red); }
+    .hero h1 span { color: var(--blue); }
     .hero p { font-size: 16px; color: var(--gray-600); max-width: 480px; margin: 0 auto 32px; }
     .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--red); color: var(--white); padding: 12px 24px; border-radius: 99px; font-size: 15px; font-weight: 600; transition: opacity 0.2s; }
+    .btn-primary { background: var(--blue); color: var(--white); padding: 12px 24px; border-radius: 99px; font-size: 15px; font-weight: 600; transition: opacity 0.2s; }
     .btn-primary:hover { opacity: 0.85; }
     .btn-secondary { background: var(--white); color: var(--gray-900); padding: 12px 24px; border-radius: 99px; font-size: 15px; font-weight: 600; border: 1.5px solid var(--gray-300); transition: border-color 0.2s; }
     .btn-secondary:hover { border-color: var(--gray-900); }
+
+    /* SECTION COMMON */
     section { padding: 64px 24px; }
     .section-inner { max-width: 860px; margin: 0 auto; }
-    .section-label { display: block; width: 40px; height: 3px; background: var(--red); margin: 0 auto 20px; border-radius: 2px; }
+    .section-label { display: block; width: 40px; height: 3px; background: var(--blue); margin: 0 auto 20px; border-radius: 2px; }
     .section-title { font-size: clamp(22px, 4vw, 30px); font-weight: 800; text-align: center; letter-spacing: -0.5px; margin-bottom: 10px; }
     .section-sub { text-align: center; color: var(--gray-600); font-size: 15px; margin-bottom: 40px; }
+
+    /* PROBLEM */
     .problem { background: var(--white); }
     .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
     .problem-card { background: var(--gray-100); border-radius: var(--radius); padding: 24px; }
     .problem-card .emoji { font-size: 28px; margin-bottom: 10px; }
     .problem-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
     .problem-card p { font-size: 14px; color: var(--gray-600); line-height: 1.5; }
+
+    /* HOW */
     .how { background: var(--gray-100); }
     .steps { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
     .step { text-align: center; width: 160px; }
-    .step-num { width: 40px; height: 40px; background: var(--red); color: var(--white); border-radius: 50%; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+    .step-num { width: 40px; height: 40px; background: var(--blue); color: var(--white); border-radius: 50%; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
     .step h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
     .step p { font-size: 13px; color: var(--gray-600); line-height: 1.4; }
     .step-arrow { font-size: 20px; color: var(--gray-300); margin-top: -24px; }
     @media (max-width: 640px) { .step-arrow { display: none; } }
+    @media (max-width: 600px) { .nav-links { display: none; } }
+
+    /* FEATURES */
     .features { background: var(--white); }
     .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
     .feature-card { background: var(--gray-100); border-radius: var(--radius); padding: 24px; }
     .feature-card .icon { font-size: 24px; margin-bottom: 10px; }
     .feature-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
     .feature-card p { font-size: 13.5px; color: var(--gray-600); line-height: 1.5; }
+
+    /* SAFETY */
     .safety { background: var(--gray-100); }
     .safety-list { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
     .safety-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; }
-    .safety-item .check { color: var(--red); font-weight: 700; flex-shrink: 0; font-size: 16px; }
+    .safety-item .check { color: var(--blue); font-weight: 700; flex-shrink: 0; font-size: 16px; }
+
+    /* CTA */
     .cta { background: var(--white); text-align: center; }
     .cta h2 { font-size: clamp(22px, 4vw, 30px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
     .cta p { color: var(--gray-600); font-size: 15px; margin-bottom: 28px; }
+
+    /* FOOTER */
     footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--gray-200); background: var(--white); font-size: 14px; color: var(--gray-600); }
     .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; font-size: 13px; }
     .footer-links a { color: var(--gray-600); }
@@ -73,102 +102,160 @@
 <body>
 
 <nav>
-  <span class="nav-logo">Youtube <span>Sub</span> Cleaner</span>
+  <span class="nav-logo">Weather<span>Wake</span></span>
   <div style="display:flex; align-items:center; gap:24px;">
     <div class="nav-links">
-      <a href="#how">사용법</a>
-      <a href="#features">기능</a>
+      <a href="#how">ì¬ì©ë²</a>
+      <a href="#features">ê¸°ë¥</a>
     </div>
-    <a class="nav-back" href="/">← devkorea1m.com</a>
+    <a class="nav-back" href="/">â devkorea1m.com</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <span class="hero-badge">Android 앱 · 무료</span>
-  <h1>유튜브 구독 채널,<br><span>한 번에 정리</span>하세요</h1>
-  <p>오랫동안 영상을 올리지 않은 채널을 자동으로 분석하고<br>불필요한 구독을 손쉽게 일괄 취소할 수 있어요.</p>
+  <span class="hero-badge">Android ì± Â· ë¬´ë£</span>
+  <h1>ë¹ ì¤ë ë  ìëì´<br><span>ë¨¼ì  ìì§ìëë¤</span></h1>
+  <p>ë ì¨ë¥¼ íì¸íê³  ìëì ìëì¼ë¡ ìë¹ê²¨ì.<br>ì¶ê·¼ ì¤ë¹ ìê°ì ì¤ë§í¸íê² ì¡°ì í´ëë¦½ëë¤.</p>
   <div class="hero-btns">
-    <a class="btn-primary" href="#how">사용법 보기</a>
-    <a class="btn-secondary" href="#features">기능 살펴보기</a>
+    <a class="btn-primary" href="#how">ì¬ì©ë² ë³´ê¸°</a>
+    <a class="btn-secondary" href="#features">ê¸°ë¥ ì´í´ë³´ê¸°</a>
   </div>
 </section>
 
+<!-- PROBLEM -->
 <section class="problem">
   <div class="section-inner">
     <span class="section-label"></span>
-    <h2 class="section-title">이런 경험 있으신가요?</h2>
-    <p class="section-sub">구독 채널이 너무 많아 관리가 어렵고, 오래된 채널이 피드를 가득 채우고 있지는 않나요?</p>
+    <h2 class="section-title">ì´ë° ê²½í ìì¼ì ê°ì?</h2>
+    <p class="section-sub">ë ì¨ ëë¬¸ì ìì¹¨ë§ë¤ ì¤ë¹ ìê°ì´ ë¶ì¡±íë ì  ìì¼ì ê°ì?</p>
     <div class="problem-grid">
-      <div class="problem-card"><div class="emoji">😴</div><h3>휴면 채널</h3><p>1년 넘게 영상을 올리지 않은 채널이 구독 목록에 가득</p></div>
-      <div class="problem-card"><div class="emoji">📱</div><h3>Shorts 폭탄</h3><p>쇼츠만 올리는 채널 때문에 원하는 영상을 찾기 어려움</p></div>
-      <div class="problem-card"><div class="emoji">😩</div><h3>일일이 취소</h3><p>채널마다 하나씩 취소해야 해서 시간이 너무 오래 걸림</p></div>
+      <div class="problem-card">
+        <div class="emoji">ð§ï¸</div>
+        <h3>ê°ìì¤ë¬ì´ ë¹</h3>
+        <p>ìì¹¨ì ì¼ì´ë ë³´ë ë¹ê° ë´ë¦¬ê³ , ì¤ë¹ ìê°ì´ ë¶ì¡±í´ íê²ì§ê² ì¶ë°</p>
+      </div>
+      <div class="problem-card">
+        <div class="emoji">âï¸</div>
+        <h3>ë ì¤ë ë  ì§ê°</h3>
+        <p>ëê¸¸ì êµíµì´ ë§í ì¤ ëª¨ë¥´ê³  íìì²ë¼ ì¤ë¹í´ì ì§ê°</p>
+      </div>
+      <div class="problem-card">
+        <div class="emoji">ð±</div>
+        <h3>ë§¤ì¼ ë ì¨ íì¸</h3>
+        <p>ì ë¤ê¸° ì  ë ì¨ ì±ì ì´ì´ë³´ê³  ìëì ì¼ì¼ì´ ìëì¼ë¡ ì¡°ì íë ë²ê±°ë¡ì</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- HOW -->
 <section class="how" id="how">
   <div class="section-inner">
     <span class="section-label"></span>
-    <h2 class="section-title">이렇게 사용해요</h2>
-    <p class="section-sub">4단계만으로 구독 목록을 깔끔하게 정리할 수 있어요.</p>
+    <h2 class="section-title">ì´ë ê² ì¬ì©í´ì</h2>
+    <p class="section-sub">í ë²ë§ ì¤ì íë©´, ìëì´ ììì ë ì¨ì ë§ì¶° ìì§ì¬ì.</p>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><h3>Google 로그인</h3><p>내 YouTube 계정으로 안전하게 로그인</p></div>
-      <div class="step-arrow">→</div>
-      <div class="step"><div class="step-num">2</div><h3>기간 설정</h3><p>몇 개월 이상 업로드 없는 채널을 정리할지 설정</p></div>
-      <div class="step-arrow">→</div>
-      <div class="step"><div class="step-num">3</div><h3>자동 분석</h3><p>앱이 채널별 마지막 업로드 날짜를 자동으로 분석</p></div>
-      <div class="step-arrow">→</div>
-      <div class="step"><div class="step-num">4</div><h3>일괄 취소</h3><p>선택된 채널을 한 번에 구독 취소</p></div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>ìë ì¤ì </h3>
+        <p>ìíë ê¸°ì ìê°ê³¼ ë ì¨ ì°ëì ì¼ê³  ìë ë±ë¡</p>
+      </div>
+      <div class="step-arrow">â</div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>ë ì¨ íì¸</h3>
+        <p>ìë 90ë¶ ì , ì±ì´ ìëì¼ë¡ ë ì¨ë¥¼ íì¸</p>
+      </div>
+      <div class="step-arrow">â</div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>ìë ì´ë</h3>
+        <p>ë¹Â·ë ìë³´ ì, ì¤ì í ìê°ë§í¼ ìëì ìëì¼ë¡ ìë¹ê¹</p>
+      </div>
+      <div class="step-arrow">â</div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>ì¬ì ë¡­ê² ì¶ë°</h3>
+        <p>ìë¦¼ì¼ë¡ ìëì´ ì´ëëìì ìë ¤ì£¼ê³ , ì¬ì  ìê² ì¤ë¹</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- FEATURES -->
 <section class="features" id="features">
   <div class="section-inner">
     <span class="section-label"></span>
-    <h2 class="section-title">주요 기능</h2>
-    <p class="section-sub">구독 정리에 필요한 모든 기능을 담았어요.</p>
+    <h2 class="section-title">ì£¼ì ê¸°ë¥</h2>
+    <p class="section-sub">ì¤ë§í¸í ê¸°ìì ìí ëª¨ë  ê¸°ë¥ì ë´ìì´ì.</p>
     <div class="features-grid">
-      <div class="feature-card"><div class="icon">🔍</div><h3>실시간 채널 분석</h3><p>구독 목록을 불러오는 동시에 채널별 마지막 업로드 날짜를 실시간으로 분석해요.</p></div>
-      <div class="feature-card"><div class="icon">🎨</div><h3>색상으로 한눈에</h3><p>삭제 대상은 빨간색, 유지할 채널은 녹색으로 표시해 직관적으로 파악할 수 있어요.</p></div>
-      <div class="feature-card"><div class="icon">☑️</div><h3>전체 선택 / 해제</h3><p>자동 선택된 채널을 전체 선택하거나, 원하는 채널만 직접 골라서 취소할 수 있어요.</p></div>
-      <div class="feature-card"><div class="icon">📅</div><h3>기간 필터</h3><p>1~24개월 범위에서 기준 기간을 자유롭게 설정할 수 있어요.</p></div>
-      <div class="feature-card"><div class="icon">🩳</div><h3>Shorts 채널 제외</h3><p>Shorts 위주의 채널을 따로 걸러낼 수 있는 필터를 제공해요.</p></div>
-      <div class="feature-card"><div class="icon">⚡</div><h3>일괄 구독 취소</h3><p>선택한 채널을 한 번에 일괄 취소해요. 광고 시청 후 실행됩니다.</p></div>
+      <div class="feature-card">
+        <div class="icon">ð¦ï¸</div>
+        <h3>ë ì¨ ì°ë ìë</h3>
+        <p>ë¹ ëë ëì´ ìë³´ë ë , ìëì ìëì¼ë¡ ìë¹ê²¨ ì¬ì ë¡ì´ ìì¹¨ì ë§ë¤ì´ì¤ì.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">â°</div>
+        <h3>ë§ì¶¤ ì í ìê°</h3>
+        <p>ë¹ ì¬ ë ëª ë¶, ë ì¬ ë ëª ë¶ ìë¹ê¸¸ì§ ë ì¨ ì¢ë¥ë³ë¡ ì§ì  ì¤ì í  ì ìì´ì.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">ð</div>
+        <h3>ìì¹ ê¸°ë° ë ì¨</h3>
+        <p>íì¬ ìì¹ ëë ì§ì  ì§ì í ìì¹ì ë ì¨ë¥¼ ê¸°ì¤ì¼ë¡ ìëì ì¡°ì í´ì.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">ð</div>
+        <h3>ë°ë³µ ìë</h3>
+        <p>ìì¼ë³ ë°ë³µ ì¤ì ì ì§ìí´ì. íì¼ ì¶ê·¼ ìëì í ë²ë§ ë±ë¡íë©´ ë§¤ì£¼ ìëì¼ë¡ ìëí´ì.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">ð</div>
+        <h3>ì´ë ìë¦¼</h3>
+        <p>ìëì´ ìë¹ê²¨ì¡ì ë ìë¦¼ì¼ë¡ ë°ë¡ ìë ¤ì¤ì. ëª ë¶ ì´ëëëì§ ì´ì ì í¨ê» íìë¼ì.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">ð</div>
+        <h3>ë¡ê·¸ì¸ ë¶íì</h3>
+        <p>Googleì´ë ë³ë ê³ì  ë¡ê·¸ì¸ ìì´ ë°ë¡ ì¬ì©í  ì ìì´ì. ëª¨ë  ë°ì´í°ë ê¸°ê¸° ììë§ ì ì¥ë¼ì.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- SAFETY -->
 <section class="safety">
   <div class="section-inner">
     <span class="section-label"></span>
-    <h2 class="section-title">안전하게 사용하세요</h2>
-    <p class="section-sub">개인정보와 계정 보안을 최우선으로 생각해요.</p>
+    <h2 class="section-title">ìì íê² ì¬ì©íì¸ì</h2>
+    <p class="section-sub">ê°ì¸ì ë³´ì ê¸°ê¸° ë³´ìì ìµì°ì ì¼ë¡ ìê°í´ì.</p>
     <div class="safety-list">
-      <div class="safety-item"><span class="check">✓</span><span>비밀번호를 요구하지 않아요. Google 공식 OAuth 2.0 방식으로만 로그인합니다.</span></div>
-      <div class="safety-item"><span class="check">✓</span><span>외부 서버에 데이터를 저장하지 않아요. 모든 정보는 사용자 기기 안에만 존재합니다.</span></div>
-      <div class="safety-item"><span class="check">✓</span><span>사용자가 선택한 채널만 취소해요. 자동으로 임의 취소하는 기능은 없습니다.</span></div>
-      <div class="safety-item"><span class="check">✓</span><span>언제든지 연동 해제 가능해요. Google 계정 설정에서 권한을 직접 취소할 수 있습니다.</span></div>
+      <div class="safety-item"><span class="check">â</span><span>ë¡ê·¸ì¸ì´ íì ìì´ì. ê³ì  ê°ìì´ë ê°ì¸ ì¸ì¦ ìì´ ë°ë¡ ì¬ì©í  ì ììµëë¤.</span></div>
+      <div class="safety-item"><span class="check">â</span><span>ì¸ë¶ ìë²ì ë°ì´í°ë¥¼ ì ì¥íì§ ììì. ìë ì¤ì ì ì¬ì©ì ê¸°ê¸° ììë§ ì ì¥ë©ëë¤.</span></div>
+      <div class="safety-item"><span class="check">â</span><span>ìì¹ ì ë³´ë ë ì¨ ì¡°íìë§ ì¬ì©í´ì. ìì¹ ë°ì´í°ë OpenWeatherMap API í¸ì¶ í ê¸°ê¸°ì ë³´ê´ëì§ ììµëë¤.</span></div>
+      <div class="safety-item"><span class="check">â</span><span>ì± ì­ì  ì ëª¨ë  ë°ì´í°ê° ì¦ì ì­ì ë¼ì. ë³ëì ê³ì  íí´ ì ì°¨ê° íì ììµëë¤.</span></div>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta">
   <div class="section-inner">
-    <h2>지금 바로 정리해보세요</h2>
-    <p>무료로 사용할 수 있어요. Google 계정만 있으면 됩니다.</p>
-    <a class="btn-primary" href="#">APK 다운로드</a>
+    <h2>ì¤ë ë°¤ë¶í° ì¤ë§í¸íê² ì¼ì´ëì¸ì</h2>
+    <p>ë¬´ë£ë¡ ì¬ì©í  ì ìì´ì. ë¡ê·¸ì¸ë íì ììµëë¤.</p>
+    <a class="btn-primary" href="#">APK ë¤ì´ë¡ë</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-links">
-    <a href="/youtubesubcleaner/privacy-policy.html">개인정보처리방침</a>
-    <a href="/youtubesubcleaner/terms-of-service.html">서비스 이용 약관</a>
-    <a href="mailto:sangwwoo84@gmail.com">문의</a>
-    <a href="/">← devkorea1m.com</a>
+    <a href="/weatherwake/privacy-policy.html">ê°ì¸ì ë³´ì²ë¦¬ë°©ì¹¨</a>
+    <a href="/weatherwake/terms-of-service.html">ìë¹ì¤ ì´ì© ì½ê´</a>
+    <a href="mailto:sangwwoo84@gmail.com">ë¬¸ì</a>
+    <a href="/">â devkorea1m.com</a>
   </div>
-  <p>© 2026 Youtube Sub Cleaner &nbsp;·&nbsp; Developer: Devkorea1m</p>
+  <p>Â© 2026 WeatherWake &nbsp;Â·&nbsp; Developer: Devkorea1m</p>
 </footer>
 
 </body>
