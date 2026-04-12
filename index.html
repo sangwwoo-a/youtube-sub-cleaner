@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devkorea1m Ã¢ÂÂ Ã«Â³ÂµÃ¬ÂÂ¡Ã­ÂÂ Ã¬ÂÂ¼Ã¬ÂÂÃ¬ÂÂ Ã«ÂÂ¨Ã¬ÂÂÃ­ÂÂÃªÂ²Â</title>
+  <title>Devkorea1m — 복잡한 일상을 단순하게</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -27,7 +27,7 @@
     }
     a { color: inherit; text-decoration: none; }
 
-    /* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ NAV Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+    /* ─── NAV ─── */
     nav {
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -41,7 +41,7 @@
     .nav-links a:hover { color: var(--gray-900); }
     @media (max-width: 600px) { .nav-links { display: none; } }
 
-    /* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ HERO Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+    /* ─── HERO ─── */
     .hero {
       text-align: center;
       padding: 100px 24px 80px;
@@ -78,10 +78,10 @@
     .hero-scroll svg { animation: bounce 2s ease-in-out infinite; }
     @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 
-    /* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ DIVIDER Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+    /* ─── DIVIDER ─── */
     .divider { height: 1px; background: var(--gray-200); max-width: 900px; margin: 0 auto; }
 
-    /* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ APPS Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+    /* ─── APPS ─── */
     .apps {
       max-width: 960px; margin: 0 auto;
       padding: 80px 24px 100px;
@@ -93,7 +93,7 @@
       text-align: center; margin-bottom: 4px;
     }
 
-    /* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ APP CARD Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+    /* ─── APP CARD ─── */
     .app-card {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -190,7 +190,7 @@
     .app-card.ww .app-card-visual { order: 2; }
     .app-card.ww .app-card-features { order: 1; border-left: none; border-right: 1px solid var(--gray-200); }
 
-    /* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ PHILOSOPHY Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+    /* ─── PHILOSOPHY ─── */
     .philosophy {
       background: var(--gray-50);
       border-top: 1px solid var(--gray-200);
@@ -213,7 +213,7 @@
     .stat-num { font-size: 26px; font-weight: 900; letter-spacing: -1px; color: var(--gray-900); }
     .stat-label { font-size: 12px; color: var(--gray-400); margin-top: 4px; line-height: 1.4; }
 
-    /* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ FOOTER Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+    /* ─── FOOTER ─── */
     footer {
       padding: 40px 24px;
       text-align: center;
@@ -231,25 +231,25 @@
 <nav>
   <span class="nav-logo">Devkorea<span>1m</span></span>
   <div class="nav-links">
-    <a href="#apps">Ã¬ÂÂ±</a>
-    <a href="#philosophy">Ã¬ÂÂÃªÂ°Â</a>
-    <a href="mailto:sangwwoo84@gmail.com">Ã«Â¬Â¸Ã¬ÂÂ</a>
+    <a href="#apps">앱</a>
+    <a href="#philosophy">소개</a>
+    <a href="mailto:sangwwoo84@gmail.com">문의</a>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-eyebrow">Android Developer</div>
-  <h1>Ã«Â³ÂµÃ¬ÂÂ¡Ã­ÂÂ Ã¬ÂÂ¼Ã¬ÂÂÃ¬ÂÂ<br>Ã«ÂÂ¨Ã¬ÂÂÃ­ÂÂÃªÂ²Â.</h1>
+  <h1>복잡한 일상을<br>단순하게.</h1>
   <p class="hero-desc">
-    ÃªÂ¼Â­ Ã­ÂÂÃ¬ÂÂÃ­ÂÂ ÃªÂ¸Â°Ã«ÂÂ¥Ã«Â§Â Ã«ÂÂ´Ã¬ÂÂµÃ«ÂÂÃ«ÂÂ¤.<br>
-    Ã­ÂÂÃ«Â Â¤Ã­ÂÂÃ¬Â§Â Ã¬ÂÂÃ¬ÂÂÃ«ÂÂ, Ã«Â§Â¤Ã¬ÂÂ¼ Ã¬ÂÂ´ÃªÂ³Â  Ã¬ÂÂ¶Ã¬ÂÂ Ã¬ÂÂ±.<br>
-    ÃªÂ·Â¸ÃªÂ²Â Devkorea1mÃ¬ÂÂ´ Ã«Â§ÂÃ«ÂÂÃ«ÂÂ Ã¬ÂÂ±Ã¬ÂÂÃ«ÂÂÃ«ÂÂ¤.
+    꼭 필요한 기능만 담습니다.<br>
+    화려하진 않아도, 매일 열고 싶은 앱.<br>
+    그게 Devkorea1m이 만드는 앱입니다.
   </p>
   <a href="#apps" class="hero-scroll">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
       <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
     </svg>
-    Ã¬ÂÂ± Ã¬ÂÂ´Ã­ÂÂ´Ã«Â³Â´ÃªÂ¸Â°
+    앱 살펴보기
   </a>
 </section>
 
@@ -261,38 +261,38 @@
   <!-- YSC -->
   <div class="app-card ysc">
     <div class="app-card-visual">
-      <div class="app-icon">Ã°ÂÂ§Â¹</div>
+      <div class="app-icon">🧹</div>
       <h2>Youtube Sub Cleaner</h2>
-      <p>Ã¬ÂÂ Ã­ÂÂÃ«Â¸Â ÃªÂµÂ¬Ã«ÂÂ Ã¬Â±ÂÃ«ÂÂÃ¬ÂÂ´ Ã«ÂÂÃ«Â¬Â´ Ã«Â§ÂÃ¬ÂÂÃ¬Â¡ÂÃ«ÂÂÃ¬ÂÂ? Ã¬ÂÂ¤Ã«ÂÂ«Ã«ÂÂÃ¬ÂÂ Ã¬ÂÂÃ«Â¡ÂÃ«ÂÂÃªÂ°Â Ã¬ÂÂÃ«ÂÂ Ã¬Â±ÂÃ«ÂÂÃ¬ÂÂ Ã­ÂÂÃ«ÂÂÃ¬ÂÂ Ã¬Â°Â¾Ã¬ÂÂ Ã«Â¹Â Ã«Â¥Â´ÃªÂ²Â Ã¬Â ÂÃ«Â¦Â¬Ã­ÂÂÃ¬ÂÂ¸Ã¬ÂÂ.</p>
+      <p>유튜브 구독 채널이 너무 많아졌나요? 오랫동안 업로드가 없는 채널을 한눈에 찾아 빠르게 정리하세요.</p>
       <div class="app-meta">
-        <span class="app-meta-tag tag-login">Google Ã«Â¡ÂÃªÂ·Â¸Ã¬ÂÂ¸ Ã­ÂÂÃ¬ÂÂ</span>
-        <span class="app-meta-tag tag-ad">ÃªÂ´ÂÃªÂ³Â  Ã­ÂÂ¬Ã­ÂÂ¨</span>
-        <span class="app-meta-tag tag-free">Ã«Â¬Â´Ã«Â£Â</span>
+        <span class="app-meta-tag tag-login">Google 로그인 필요</span>
+        <span class="app-meta-tag tag-ad">광고 포함</span>
+        <span class="app-meta-tag tag-free">무료</span>
       </div>
-      <a class="app-btn" href="/youtubesubcleaner/">Ã¬ÂÂÃ¬ÂÂ¸Ã­ÂÂ Ã«Â³Â´ÃªÂ¸Â° Ã¢ÂÂ</a>
+      <a class="app-btn" href="/youtubesubcleaner/">자세히 보기 →</a>
     </div>
     <div class="app-card-features">
-      <p class="features-title">Ã¬Â£Â¼Ã¬ÂÂ ÃªÂ¸Â°Ã«ÂÂ¥</p>
+      <p class="features-title">주요 기능</p>
       <div class="feature-list">
         <div class="feature-item">
           <span class="feature-dot"></span>
           <div>
-            <strong>Ã­ÂÂ´Ã«Â©Â´ Ã¬Â±ÂÃ«ÂÂ Ã¬ÂÂÃ«ÂÂ ÃªÂ°ÂÃ¬Â§Â</strong>
-            <span>Ã«Â§ÂÃ¬Â§ÂÃ«Â§Â Ã¬ÂÂÃ«Â¡ÂÃ«ÂÂ ÃªÂ¸Â°Ã¬Â¤ÂÃ¬ÂÂ¼Ã«Â¡Â Ã¬ÂÂ¤Ã«ÂÂ«Ã«ÂÂÃ¬ÂÂ Ã­ÂÂÃ«ÂÂÃ¬ÂÂ´ Ã¬ÂÂÃ«ÂÂ Ã¬Â±ÂÃ«ÂÂÃ¬ÂÂ Ã¬ÂÂÃ«ÂÂ Ã«Â¶ÂÃ«Â¥Â</span>
+            <strong>휴면 채널 자동 감지</strong>
+            <span>마지막 업로드 기준으로 오랫동안 활동이 없는 채널을 자동 분류</span>
           </div>
         </div>
         <div class="feature-item">
           <span class="feature-dot"></span>
           <div>
-            <strong>Ã¬ÂÂ¼ÃªÂ´Â ÃªÂµÂ¬Ã«ÂÂ Ã¬Â·Â¨Ã¬ÂÂ</strong>
-            <span>Ã¬Â±ÂÃ«ÂÂÃ«Â§ÂÃ«ÂÂ¤ Ã«ÂÂ¤Ã¬ÂÂ´ÃªÂ°Â Ã­ÂÂÃ¬ÂÂ Ã¬ÂÂÃ¬ÂÂ´ Ã¬ÂÂ¬Ã«ÂÂ¬ Ã¬Â±ÂÃ«ÂÂÃ¬ÂÂ Ã­ÂÂ Ã«Â²ÂÃ¬ÂÂ Ã¬ÂÂ Ã­ÂÂÃ­ÂÂ´ ÃªÂµÂ¬Ã«ÂÂ Ã¬Â·Â¨Ã¬ÂÂ</span>
+            <strong>일괄 구독 취소</strong>
+            <span>채널마다 들어갈 필요 없이 여러 채널을 한 번에 선택해 구독 취소</span>
           </div>
         </div>
         <div class="feature-item">
           <span class="feature-dot"></span>
           <div>
-            <strong>Google ÃªÂ³ÂµÃ¬ÂÂ API Ã¬ÂÂ¬Ã¬ÂÂ©</strong>
-            <span>YouTube Data API v3 Ã¬ÂÂ¬Ã¬ÂÂ©. Ã«Â¹ÂÃ«Â°ÂÃ«Â²ÂÃ­ÂÂ¸Ã«Â¥Â¼ Ã¬ÂÂ±Ã¬ÂÂ Ã¬ÂÂÃ«Â Â¥Ã­ÂÂÃ¬Â§Â Ã¬ÂÂÃ¬ÂÂÃ¬ÂÂ</span>
+            <strong>Google 공식 API 사용</strong>
+            <span>YouTube Data API v3 사용. 비밀번호를 앱에 입력하지 않아요</span>
           </div>
         </div>
       </div>
@@ -302,40 +302,40 @@
   <!-- WeatherWake -->
   <div class="app-card ww">
     <div class="app-card-features">
-      <p class="features-title">Ã¬Â£Â¼Ã¬ÂÂ ÃªÂ¸Â°Ã«ÂÂ¥</p>
+      <p class="features-title">주요 기능</p>
       <div class="feature-list">
         <div class="feature-item">
           <span class="feature-dot"></span>
           <div>
-            <strong>Ã«ÂÂ Ã¬ÂÂ¨ Ã¬ÂÂ°Ã«ÂÂ Ã¬ÂÂÃ«ÂÂ</strong>
-            <span>Ã«Â¹ÂÃÂ·Ã«ÂÂ Ã¬ÂÂÃ«Â³Â´ Ã¬ÂÂ Ã¬ÂÂÃ«ÂÂÃ¬ÂÂ Ã¬ÂÂÃ«ÂÂÃ¬ÂÂ¼Ã«Â¡Â Ã¬ÂÂÃ«ÂÂ¹ÃªÂ²Â¨ Ã¬ÂÂ¬Ã¬ÂÂ Ã«Â¡ÂÃ¬ÂÂ´ Ã¬ÂÂÃ¬Â¹Â¨Ã¬ÂÂ Ã«Â§ÂÃ«ÂÂ¤Ã¬ÂÂ´Ã¬Â¤Â</span>
+            <strong>날씨 연동 알람</strong>
+            <span>비·눈 예보 시 알람을 자동으로 앞당겨 여유로운 아침을 만들어줌</span>
           </div>
         </div>
         <div class="feature-item">
           <span class="feature-dot"></span>
           <div>
-            <strong>Ã«Â§ÂÃ¬Â¶Â¤ Ã¬ÂÂ Ã­ÂÂ Ã¬ÂÂÃªÂ°Â</strong>
-            <span>Ã«ÂÂ Ã¬ÂÂ¨ Ã¬Â¢ÂÃ«Â¥ÂÃ«Â³ÂÃ«Â¡Â Ã«ÂªÂ Ã«Â¶Â Ã¬ÂÂÃ«ÂÂ¹ÃªÂ¸Â¸Ã¬Â§Â Ã¬Â§ÂÃ¬Â Â Ã¬ÂÂ¤Ã¬Â Â ÃªÂ°ÂÃ«ÂÂ¥</span>
+            <strong>맞춤 선행 시간</strong>
+            <span>날씨 종류별로 몇 분 앞당길지 직접 설정 가능</span>
           </div>
         </div>
         <div class="feature-item">
           <span class="feature-dot"></span>
           <div>
-            <strong>Ã¬ÂÂÃ¬Â Â Ã¬ÂÂ¤Ã­ÂÂÃ«ÂÂ¼Ã¬ÂÂ¸ Ã«ÂÂÃ¬ÂÂ</strong>
-            <span>Ã«ÂÂ Ã¬ÂÂ¨ Ã¬Â¡Â°Ã­ÂÂ Ã¬ÂÂ¸ Ã«ÂªÂ¨Ã«ÂÂ  Ã«ÂÂ°Ã¬ÂÂ´Ã­ÂÂ°Ã«ÂÂ ÃªÂ¸Â°ÃªÂ¸Â° Ã«ÂÂ´Ã«Â¶ÂÃ¬ÂÂÃ«Â§Â Ã¬Â ÂÃ¬ÂÂ¥. ÃªÂ³ÂÃ¬Â Â Ã«Â¶ÂÃ­ÂÂÃ¬ÂÂ</span>
+            <strong>완전 오프라인 동작</strong>
+            <span>날씨 조회 외 모든 데이터는 기기 내부에만 저장. 계정 불필요</span>
           </div>
         </div>
       </div>
     </div>
     <div class="app-card-visual">
-      <div class="app-icon">Ã°ÂÂÂ§Ã¯Â¸Â</div>
+      <div class="app-icon">🌧️</div>
       <h2>WeatherWake</h2>
-      <p>Ã«Â¹Â Ã¬ÂÂ¤Ã«ÂÂ Ã«ÂÂ  Ã¬ÂÂÃ«ÂÂÃ¬ÂÂ´ Ã«Â¨Â¼Ã¬Â Â Ã¬ÂÂÃ¬Â§ÂÃ¬ÂÂÃ«ÂÂÃ«ÂÂ¤. Ã«ÂÂ Ã¬ÂÂ¨Ã«Â¥Â¼ Ã­ÂÂÃ¬ÂÂ¸Ã­ÂÂÃªÂ³Â  Ã¬Â¶ÂÃªÂ·Â¼ Ã¬Â¤ÂÃ«Â¹Â Ã¬ÂÂÃªÂ°ÂÃ¬ÂÂ Ã¬ÂÂÃ«ÂÂÃ¬ÂÂ¼Ã«Â¡Â Ã¬Â¡Â°Ã¬Â ÂÃ­ÂÂ´Ã«ÂÂÃ«Â Â¤Ã¬ÂÂ.</p>
+      <p>비 오는 날 알람이 먼저 움직입니다. 날씨를 확인하고 출근 준비 시간을 자동으로 조정해드려요.</p>
       <div class="app-meta">
-        <span class="app-meta-tag tag-nologin">Ã«Â¡ÂÃªÂ·Â¸Ã¬ÂÂ¸ Ã«Â¶ÂÃ­ÂÂÃ¬ÂÂ</span>
-        <span class="app-meta-tag tag-free">Ã«Â¬Â´Ã«Â£Â</span>
+        <span class="app-meta-tag tag-nologin">로그인 불필요</span>
+        <span class="app-meta-tag tag-free">무료</span>
       </div>
-      <a class="app-btn" href="/weatherwake/">Ã¬ÂÂÃ¬ÂÂ¸Ã­ÂÂ Ã«Â³Â´ÃªÂ¸Â° Ã¢ÂÂ</a>
+      <a class="app-btn" href="/weatherwake/">자세히 보기 →</a>
     </div>
   </div>
 
@@ -343,24 +343,24 @@
 
 <section class="philosophy" id="philosophy">
   <div class="philosophy-inner">
-    <h2>"ÃªÂ¼Â­ Ã­ÂÂÃ¬ÂÂÃ­ÂÂ ÃªÂ²ÂÃ«Â§Â,<br>ÃªÂ°ÂÃ¬ÂÂ¥ Ã«ÂÂ¨Ã¬ÂÂÃ­ÂÂÃªÂ²Â"</h2>
+    <h2>"꼭 필요한 것만,<br>가장 단순하게"</h2>
     <p>
-      Ã­ÂÂÃ«Â Â¤Ã­ÂÂ ÃªÂ¸Â°Ã«ÂÂ¥Ã«Â³Â´Ã«ÂÂ¤ Ã¬ÂÂ¤Ã¬Â ÂÃ«Â¡Â Ã«Â§Â¤Ã¬ÂÂ¼ Ã¬ÂÂ°Ã¬ÂÂ´Ã«ÂÂ Ã¬ÂÂ±Ã¬ÂÂ Ã«Â§ÂÃ«ÂÂ¤ÃªÂ³Â  Ã¬ÂÂ¶Ã¬ÂÂÃ¬ÂÂµÃ«ÂÂÃ«ÂÂ¤.<br>
-      Ã«Â¶ÂÃ­ÂÂÃ¬ÂÂÃ­ÂÂ ÃªÂ¶ÂÃ­ÂÂ Ã¬ÂÂÃ¬Â²Â­ Ã¬ÂÂÃ¬ÂÂ´, Ã«Â³ÂµÃ¬ÂÂ¡Ã­ÂÂ Ã¬ÂÂ¨Ã«Â³Â´Ã«ÂÂ© Ã¬ÂÂÃ¬ÂÂ´<br>
-      Ã¬ÂÂ±Ã¬ÂÂ Ã¬ÂÂ´Ã«Â©Â´ Ã«Â°ÂÃ«Â¡Â Ã¬ÂÂÃ­ÂÂÃ«ÂÂ ÃªÂ±Â¸ Ã­ÂÂ  Ã¬ÂÂ Ã¬ÂÂÃ«ÂÂ Ã¢ÂÂ ÃªÂ·Â¸Ã«ÂÂ° Ã¬ÂÂ±Ã¬ÂÂ´Ã¬ÂÂ.
+      화려한 기능보다 실제로 매일 쓰이는 앱을 만들고 싶었습니다.<br>
+      불필요한 권한 요청 없이, 복잡한 온보딩 없이<br>
+      앱을 열면 바로 원하는 걸 할 수 있는 — 그런 앱이요.
     </p>
     <div class="philosophy-stats">
       <div class="stat">
         <div class="stat-num">2</div>
-        <div class="stat-label">Ã¬Â¶ÂÃ¬ÂÂ Ã¬ÂÂ±</div>
+        <div class="stat-label">출시 앱</div>
       </div>
       <div class="stat">
         <div class="stat-num">1</div>
-        <div class="stat-label">Ã«Â¡ÂÃªÂ·Â¸Ã¬ÂÂ¸ Ã¬ÂÂÃ¬ÂÂ´<br>Ã¬ÂÂ¬Ã¬ÂÂ© ÃªÂ°ÂÃ«ÂÂ¥Ã­ÂÂ Ã¬ÂÂ±</div>
+        <div class="stat-label">로그인 없이<br>사용 가능한 앱</div>
       </div>
       <div class="stat">
         <div class="stat-num">100%</div>
-        <div class="stat-label">Ã«Â¬Â´Ã«Â£Â Ã«ÂÂ¤Ã¬ÂÂ´Ã«Â¡ÂÃ«ÂÂ</div>
+        <div class="stat-label">무료 다운로드</div>
       </div>
     </div>
   </div>
@@ -373,7 +373,7 @@
     <a href="/weatherwake/">WeatherWake</a>
     <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a>
   </div>
-  <p>ÃÂ© 2026 Devkorea1m ÃÂ· Android Developer</p>
+  <p>© 2026 Devkorea1m · Android Developer</p>
 </footer>
 
 </body>
