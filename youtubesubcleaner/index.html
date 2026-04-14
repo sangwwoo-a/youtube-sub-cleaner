@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <script>
-          (function() {
-                  var lang = navigator.language || navigator.userLanguage || 'ko';
-                  if (!lang.startsWith('ko')) {
-                            location.replace('/en/youtubesubcleaner/');
-                  }
-          })();
-    </script>
+  <script>
+    (function() {
+      if (sessionStorage.getItem('lang-override') === 'ko') return;
+      var lang = navigator.language || 'ko';
+      if (!lang.startsWith('ko')) {
+        location.replace('/en/youtubesubcleaner/');
+      }
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Youtube Sub Cleaner</title>
   <!-- Open Graph -->
   <meta property="og:title" content="Youtube Subscribe Cleaner" />
-  <meta property="og:description" content="오랫동안 업로드가 없는 유튜브 채널을 빠르게 정리하세요." />
+  <meta property="og:description" content="오래된 유튜브 채널 구독을 한 번에 정리하세요. 업로드가 없는 채널을 찾아 한 번에 구독 취소하세요." />
   <meta property="og:image" content="https://devkorea1m.com/og-preview.jpg" />
   <meta property="og:url" content="https://devkorea1m.com/youtubesubcleaner/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://devkorea1m.com/og-preview.jpg" />
+  <meta name="description" content="오랫동안 업로드가 없는 유튜브 채널을 자동으로 분석해 한 번에 구독 취소할 수 있는 안드로이드 앱" />
+  <link rel="canonical" href="https://devkorea1m.com/youtubesubcleaner/" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -31,7 +34,12 @@
     html { scroll-behavior: smooth; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif; color: var(--gray-900); background: var(--gray-100); line-height: 1.7; }
     a { color: inherit; text-decoration: none; }
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-200); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px;
+    }
     .nav-logo { font-size: 17px; font-weight: 700; }
     .nav-logo span { color: var(--red); }
     .nav-links { display: flex; gap: 24px; font-size: 14px; color: var(--gray-600); }
@@ -93,96 +101,96 @@
   <span class="nav-logo">Youtube <span>Sub</span> Cleaner</span>
   <div style="display:flex; align-items:center; gap:24px;">
     <div class="nav-links">
-      <a href="#how">사용법</a>
-      <a href="#features">기능</a>
+      <a href="#how">사용 방법</a>
+      <a href="#features">주요 기능</a>
     </div>
     <a class="nav-back" href="/">← devkorea1m.com</a>
   </div>
 </nav>
 
 <section class="hero">
-  <span class="hero-badge">Android 앱 · 무료</span>
-  <h1>유튜브 구독 채널,<br><span>한 번에 정리</span>하세요</h1>
-  <p>오랫동안 영상을 올리지 않은 채널을 자동으로 분석하고<br>불필요한 구독을 손쉽게 일괄 취소할 수 있어요.</p>
+  <span class="hero-badge">Android App · 무료</span>
+  <h1>유튜브 구독 채널을<br><span>한 번에 정리하세요</span></h1>
+  <p>오랫동안 업로드가 없는 채널을 자동으로 분석하고<br>필요 없는 채널을 한 번에 구독 취소하세요.</p>
   <div class="hero-btns">
-    <a class="btn-primary" href="#how">사용법 보기</a>
+    <a class="btn-primary" href="#how">사용 방법</a>
     <a class="btn-secondary" href="#features">기능 살펴보기</a>
   </div>
 </section>
 
 <section class="problem">
   <div class="section-inner">
-    <span class="section-label"></span>
+    <span class="section-label" aria-hidden="true"></span>
     <h2 class="section-title">이런 경험 있으신가요?</h2>
-    <p class="section-sub">구독 채널이 너무 많아 관리가 어렵고, 오래된 채널이 피드를 가득 채우고 있지는 않나요?</p>
+    <p class="section-sub">구독 채널이 너무 많아 관리가 어렵고, 오래된 채널들이 피드를 가득 채우고 있지 않으신가요?</p>
     <div class="problem-grid">
-      <div class="problem-card"><div class="emoji">😴</div><h3>휴면 채널</h3><p>1년 넘게 영상을 올리지 않은 채널이 구독 목록에 가득</p></div>
-      <div class="problem-card"><div class="emoji">😩</div><h3>일일이 취소</h3><p>채널마다 하나씩 취소해야 해서 시간이 너무 오래 걸림</p></div>
-                  <div class="problem-card"><div class="emoji">📺</div><h3>피드 혼잡</h3><p>관심 없는 채널들 때문에 정작 보고 싶은 영상이 피드에 묻혀버림</p></div>
+      <div class="problem-card"><div class="emoji">😴</div><h3>오래된 채널</h3><p>1년 이상 업로드가 없는 채널들이 구독 목록을 가득 채우고 있어요</p></div>
+      <div class="problem-card"><div class="emoji">😩</div><h3>하나씩 취소</h3><p>채널마다 하나씩 구독 취소하는 건 너무 귀찮고 시간이 오래 걸려요</p></div>
+      <div class="problem-card"><div class="emoji">📺</div><h3>지저분한 피드</h3><p>관심 없는 채널들이 진짜 보고 싶은 콘텐츠를 가리고 있어요</p></div>
     </div>
   </div>
 </section>
 
 <section class="how" id="how">
   <div class="section-inner">
-    <span class="section-label"></span>
-    <h2 class="section-title">이렇게 사용해요</h2>
-    <p class="section-sub">4단계만으로 구독 목록을 깔끔하게 정리할 수 있어요.</p>
+    <span class="section-label" aria-hidden="true"></span>
+    <h2 class="section-title">사용 방법</h2>
+    <p class="section-sub">4단계로 구독 목록을 깔끔하게 정리하세요.</p>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><h3>Google 로그인</h3><p>내 YouTube 계정으로 안전하게 로그인</p></div>
+      <div class="step"><div class="step-num">1</div><h3>구글 로그인</h3><p>YouTube 계정에 안전하게 로그인하세요</p></div>
       <div class="step-arrow">→</div>
-      <div class="step"><div class="step-num">2</div><h3>기간 설정</h3><p>몇 개월 이상 업로드 없는 채널을 정리할지 설정</p></div>
+      <div class="step"><div class="step-num">2</div><h3>필터 설정</h3><p>몇 개월 이상 비활성화된 채널을 필터링할지 선택하세요</p></div>
       <div class="step-arrow">→</div>
-      <div class="step"><div class="step-num">3</div><h3>자동 분석</h3><p>앱이 채널별 마지막 업로드 날짜를 자동으로 분석</p></div>
+      <div class="step"><div class="step-num">3</div><h3>자동 분석</h3><p>앱이 각 채널의 마지막 업로드 날짜를 자동으로 확인해요</p></div>
       <div class="step-arrow">→</div>
-      <div class="step"><div class="step-num">4</div><h3>일괄 취소</h3><p>선택된 채널을 한 번에 구독 취소</p></div>
+      <div class="step"><div class="step-num">4</div><h3>일괄 취소</h3><p>선택한 채널들을 한 번에 구독 취소하세요</p></div>
     </div>
   </div>
 </section>
 
 <section class="features" id="features">
   <div class="section-inner">
-    <span class="section-label"></span>
+    <span class="section-label" aria-hidden="true"></span>
     <h2 class="section-title">주요 기능</h2>
-    <p class="section-sub">구독 정리에 필요한 모든 기능을 담았어요.</p>
+    <p class="section-sub">구독 관리에 필요한 모든 것.</p>
     <div class="features-grid">
-      <div class="feature-card"><div class="icon">🔍</div><h3>실시간 채널 분석</h3><p>구독 목록을 불러오는 동시에 채널별 마지막 업로드 날짜를 실시간으로 분석해요.</p></div>
-      <div class="feature-card"><div class="icon">🎨</div><h3>색상으로 한눈에</h3><p>삭제 대상은 빨간색, 유지할 채널은 녹색으로 표시해 직관적으로 파악할 수 있어요.</p></div>
-      <div class="feature-card"><div class="icon">☑️</div><h3>전체 선택 / 해제</h3><p>자동 선택된 채널을 전체 선택하거나, 원하는 채널만 직접 골라서 취소할 수 있어요.</p></div>
-      <div class="feature-card"><div class="icon">📅</div><h3>기간 필터</h3><p>1~24개월 범위에서 기준 기간을 자유롭게 설정할 수 있어요.</p></div>
-      <div class="feature-card"><div class="icon">🎯</div><h3>3가지 청소 모드</h3><p>오래된 업로드 기준, 구독 날짜 기준, 직접 선택까지 상황에 맞게 구독 목록을 정리할 수 있어요.</p></div>
-      <div class="feature-card"><div class="icon">⚡</div><h3>일괄 구독 취소</h3><p>선택한 채널을 한 번에 일괄 취소해요. 광고 시청 후 실행됩니다.</p></div>
+      <div class="feature-card"><div class="icon">🔍</div><h3>실시간 채널 분석</h3><p>구독 목록을 가져와 각 채널의 마지막 업로드 날짜를 실시간으로 분석해요.</p></div>
+      <div class="feature-card"><div class="icon">🎨</div><h3>한눈에 색상 구분</h3><p>삭제할 채널은 빨간색, 유지할 채널은 초록색으로 표시되어 한눈에 파악할 수 있어요.</p></div>
+      <div class="feature-card"><div class="icon">☑️</div><h3>전체 선택 / 해제</h3><p>자동 선택된 목록에서 시작하거나, 구독 취소할 채널을 직접 골라보세요.</p></div>
+      <div class="feature-card"><div class="icon">📅</div><h3>기간 필터</h3><p>비활성화 기준을 1개월부터 24개월까지 자유롭게 설정하세요.</p></div>
+      <div class="feature-card"><div class="icon">🎯</div><h3>3가지 정리 모드</h3><p>오래된 업로드 순, 구독 날짜 순, 또는 직접 선택 — 필요에 맞게 골라보세요.</p></div>
+      <div class="feature-card"><div class="icon">⚡</div><h3>일괄 구독 취소</h3><p>선택한 채널들을 한 번에 구독 취소해요. 짧은 광고 후 실행됩니다.</p></div>
     </div>
   </div>
 </section>
 
 <section class="safety">
   <div class="section-inner">
-    <span class="section-label"></span>
-    <h2 class="section-title">안전하게 사용하세요</h2>
-    <p class="section-sub">개인정보와 계정 보안을 최우선으로 생각해요.</p>
+    <span class="section-label" aria-hidden="true"></span>
+    <h2 class="section-title">개인정보 보호</h2>
+    <p class="section-sub">회원님의 개인정보와 계정 보안을 소중히 여깁니다.</p>
     <div class="safety-list">
-      <div class="safety-item"><span class="check">✓</span><span>비밀번호를 요구하지 않아요. Google 공식 OAuth 2.0 방식으로만 로그인합니다.</span></div>
-      <div class="safety-item"><span class="check">✓</span><span>외부 서버에 데이터를 저장하지 않아요. 모든 정보는 사용자 기기 안에만 존재합니다.</span></div>
-      <div class="safety-item"><span class="check">✓</span><span>사용자가 선택한 채널만 취소해요. 자동으로 임의 취소하는 기능은 없습니다.</span></div>
-      <div class="safety-item"><span class="check">✓</span><span>언제든지 연동 해제 가능해요. Google 계정 설정에서 권한을 직접 취소할 수 있습니다.</span></div>
+      <div class="safety-item"><span class="check">✓</span><span>비밀번호 불필요. 구글 공식 OAuth 2.0만 사용합니다.</span></div>
+      <div class="safety-item"><span class="check">✓</span><span>외부 서버에 데이터를 저장하지 않습니다. 모든 데이터는 기기에만 저장됩니다.</span></div>
+      <div class="safety-item"><span class="check">✓</span><span>선택한 채널만 구독 취소됩니다. 자동 삭제는 없습니다.</span></div>
+      <div class="safety-item"><span class="check">✓</span><span>Google 계정 설정에서 언제든지 액세스 권한을 취소할 수 있습니다.</span></div>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="section-inner">
-    <h2>지금 바로 정리해보세요</h2>
-    <p>무료로 사용할 수 있어요. Google 계정만 있으면 됩니다.</p>
-    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.sangwwoo.youtubesubcleaner" target="_blank">APK 다운로드</a>
+    <h2>지금 바로 정리 시작하기</h2>
+    <p>완전 무료. 구글 계정만 있으면 됩니다.</p>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.sangwwoo.youtubesubcleaner" target="_blank" rel="noopener noreferrer">Google Play에서 다운로드</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-links">
     <a href="/youtubesubcleaner/privacy-policy.html">개인정보처리방침</a>
-    <a href="/youtubesubcleaner/terms-of-service.html">서비스 이용 약관</a>
-    <a href="mailto:sangwwoo84@gmail.com">문의</a>
+    <a href="/youtubesubcleaner/terms-of-service.html">이용약관</a>
+    <a href="mailto:sangwwoo84@gmail.com">문의하기</a>
     <a href="/">← devkorea1m.com</a>
   </div>
   <p>© 2026 Youtube Sub Cleaner &nbsp;·&nbsp; Developer: Devkorea1m</p>
