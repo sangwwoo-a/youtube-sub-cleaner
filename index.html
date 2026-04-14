@@ -3,7 +3,8 @@
 <head>
     <script>
           (function() {
-                  var lang = navigator.language || navigator.userLanguage || 'ko';
+                  if (sessionStorage.getItem('lang-override') === 'ko') return;
+                  var lang = navigator.language || 'ko';
                   if (!lang.startsWith('ko') && location.pathname === '/') {
                             location.replace('/en/');
                   }
@@ -20,6 +21,8 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://devkorea1m.com/og-preview.jpg" />
+    <meta name="description" content="한국 개인 개발자가 만든 안드로이드 앱 소개 사이트 — YoutubeSubCleaner, WeatherWake" />
+    <link rel="canonical" href="https://devkorea1m.com/" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -48,7 +51,7 @@
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 2rem; height: 60px;
-      background: rgba(255,255,255,0.9); backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--gray-200);
     }
     .nav-logo { font-size: 16px; font-weight: 800; letter-spacing: -0.5px; }
