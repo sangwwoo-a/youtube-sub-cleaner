@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube Sub Cleaner</title>
+  <meta property="og:title" content="Youtube Subscribe Cleaner" />
+  <meta property="og:description" content="Find and unsubscribe from YouTube channels that haven't uploaded in ages." />
+  <meta property="og:image" content="https://devkorea1m.com/og-preview.jpg" />
+  <meta property="og:url" content="https://devkorea1m.com/en/youtubesubcleaner/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://devkorea1m.com/og-preview.jpg" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #FF4444; --red-light: #fff0f0; --red-dark: #cc0000; --gray-100: #f7f7f7; --gray-200: #eeeeee; --gray-300: #dddddd; --gray-600: #666666; --gray-900: #111111; --green-light: #e8f5e9; --white: #ffffff; --radius: 12px; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-900); background: var(--gray-100); line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-200); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-size: 17px; font-weight: 700; }
+    .nav-logo span { color: var(--red); }
+    .nav-links { display: flex; gap: 24px; font-size: 14px; color: var(--gray-600); }
+    @media (max-width: 600px) { .nav-links { display: none; } }
+    .nav-links a:hover { color: var(--gray-900); }
+    .nav-back { font-size: 13px; color: var(--gray-600); }
+    .nav-back:hover { color: var(--gray-900); }
+    .hero { text-align: center; padding: 72px 24px 56px; }
+    .hero-badge { display: inline-block; background: var(--red-light); color: var(--red); font-size: 13px; font-weight: 600; padding: 4px 14px; border-radius: 99px; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px; }
+    .hero h1 span { color: var(--red); }
+    .hero p { font-size: 16px; color: var(--gray-600); max-width: 480px; margin: 0 auto 32px; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--red); color: var(--white); padding: 12px 24px; border-radius: 99px; font-size: 15px; font-weight: 600; transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-secondary { background: var(--white); color: var(--gray-900); padding: 12px 24px; border-radius: 99px; font-size: 15px; font-weight: 600; border: 1.5px solid var(--gray-300); transition: border-color 0.2s; }
+    .btn-secondary:hover { border-color: var(--gray-900); }
+    section { padding: 64px 24px; }
+    .section-inner { max-width: 860px; margin: 0 auto; }
+    .section-label { display: block; width: 40px; height: 3px; background: var(--red); margin: 0 auto 20px; border-radius: 2px; }
+    .section-title { font-size: clamp(22px, 4vw, 30px); font-weight: 800; text-align: center; letter-spacing: -0.5px; margin-bottom: 10px; }
+    .section-sub { text-align: center; color: var(--gray-600); font-size: 15px; margin-bottom: 40px; }
+    .problem { background: var(--white); }
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .problem-card { background: var(--gray-100); border-radius: var(--radius); padding: 24px; }
+    .problem-card .emoji { font-size: 28px; margin-bottom: 10px; }
+    .problem-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .problem-card p { font-size: 14px; color: var(--gray-600); line-height: 1.5; }
+    .how { background: var(--gray-100); }
+    .steps { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+    .step { text-align: center; width: 160px; }
+    .step-num { width: 40px; height: 40px; background: var(--red); color: var(--white); border-radius: 50%; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+    .step h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .step p { font-size: 13px; color: var(--gray-600); line-height: 1.4; }
+    .step-arrow { font-size: 20px; color: var(--gray-300); margin-top: -24px; }
+    @media (max-width: 640px) { .step-arrow { display: none; } }
+    .features { background: var(--white); }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .feature-card { background: var(--gray-100); border-radius: var(--radius); padding: 24px; }
+    .feature-card .icon { font-size: 24px; margin-bottom: 10px; }
+    .feature-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .feature-card p { font-size: 13.5px; color: var(--gray-600); line-height: 1.5; }
+    .safety { background: var(--gray-100); }
+    .safety-list { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .safety-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; }
+    .safety-item .check { color: var(--red); font-weight: 700; flex-shrink: 0; font-size: 16px; }
+    .cta { background: var(--white); text-align: center; }
+    .cta h2 { font-size: clamp(22px, 4vw, 30px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
+    .cta p { color: var(--gray-600); font-size: 15px; margin-bottom: 28px; }
+    footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--gray-200); background: var(--white); font-size: 14px; color: var(--gray-600); }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; font-size: 13px; }
+    .footer-links a { color: var(--gray-600); }
+    .footer-links a:hover { color: var(--gray-900); text-decoration: underline; }
+  </style>
+</head>
+<body>
+<nav>
+  <span class="nav-logo">Youtube <span>Sub</span> Cleaner</span>
+  <div style="display:flex; align-items:center; gap:24px;">
+    <div class="nav-links">
+      <a href="#how">How to Use</a>
+      <a href="#features">Features</a>
+    </div>
+    <a class="nav-back" href="/en/">&larr; devkorea1m.com</a>
+  </div>
+</nav>
+<section class="hero">
+  <span class="hero-badge">Android App &middot; Free</span>
+  <h1>Clean Up Your YouTube<br><span>Subscriptions at Once</span></h1>
+  <p>Automatically analyse channels that haven't uploaded in a long time<br>and bulk-unsubscribe from the ones you no longer need.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="#how">How to Use</a>
+    <a class="btn-secondary" href="#features">Explore Features</a>
+  </div>
+</section>
+<section class="problem">
+  <div class="section-inner">
+    <span class="section-label"></span>
+    <h2 class="section-title">Sound Familiar?</h2>
+    <p class="section-sub">Too many subscriptions making it hard to manage, with inactive channels cluttering your feed?</p>
+    <div class="problem-grid">
+      <div class="problem-card"><div class="emoji">&#128564;</div><h3>Inactive Channels</h3><p>Channels that haven't uploaded in over a year are still filling your subscription list</p></div>
+      <div class="problem-card"><div class="emoji">&#128553;</div><h3>One by One</h3><p>Having to unsubscribe channel by channel takes forever</p></div>
+      <div class="problem-card"><div class="emoji">&#128250;</div><h3>Cluttered Feed</h3><p>Channels you don't care about are burying the content you actually want to watch</p></div>
+    </div>
+  </div>
+</section>
+<section class="how" id="how">
+  <div class="section-inner">
+    <span class="section-label"></span>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Clean up your subscription list in just 4 steps.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Google Sign In</h3><p>Sign in to your YouTube account securely</p></div>
+      <div class="step-arrow">&rarr;</div>
+      <div class="step"><div class="step-num">2</div><h3>Set Filter</h3><p>Choose how many months of inactivity to filter by</p></div>
+      <div class="step-arrow">&rarr;</div>
+      <div class="step"><div class="step-num">3</div><h3>Auto Analysis</h3><p>The app automatically checks each channel's last upload date</p></div>
+      <div class="step-arrow">&rarr;</div>
+      <div class="step"><div class="step-num">4</div><h3>Bulk Unsubscribe</h3><p>Unsubscribe from selected channels all at once</p></div>
+    </div>
+  </div>
+</section>
+<section class="features" id="features">
+  <div class="section-inner">
+    <span class="section-label"></span>
+    <h2 class="section-title">Key Features</h2>
+    <p class="section-sub">Everything you need to manage your subscriptions.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="icon">&#128269;</div><h3>Real-Time Channel Analysis</h3><p>Fetches your subscription list and analyses each channel's last upload date in real time.</p></div>
+      <div class="feature-card"><div class="icon">&#127912;</div><h3>Colour-Coded at a Glance</h3><p>Channels to remove are shown in red, channels to keep in green &mdash; easy to understand instantly.</p></div>
+      <div class="feature-card"><div class="icon">&#9745;&#65039;</div><h3>Select All / Deselect</h3><p>Start from the auto-selected list, or pick exactly the channels you want to unsubscribe from.</p></div>
+      <div class="feature-card"><div class="icon">&#128197;</div><h3>Period Filter</h3><p>Freely set your inactivity threshold anywhere from 1 to 24 months.</p></div>
+      <div class="feature-card"><div class="icon">&#127919;</div><h3>3 Cleanup Modes</h3><p>Sort by oldest upload, by subscription date, or choose manually &mdash; whatever suits your needs.</p></div>
+      <div class="feature-card"><div class="icon">&#9889;</div><h3>Bulk Unsubscribe</h3><p>Unsubscribe from all selected channels in one go. Runs after a short ad.</p></div>
+    </div>
+  </div>
+</section>
+<section class="safety">
+  <div class="section-inner">
+    <span class="section-label"></span>
+    <h2 class="section-title">Your Privacy Matters</h2>
+    <p class="section-sub">We take your personal information and account security seriously.</p>
+    <div class="safety-list">
+      <div class="safety-item"><span class="check">&#10003;</span><span>No password required. Sign-in uses Google's official OAuth 2.0 only.</span></div>
+      <div class="safety-item"><span class="check">&#10003;</span><span>No data stored on external servers. Everything stays on your device.</span></div>
+      <div class="safety-item"><span class="check">&#10003;</span><span>Only the channels you select are unsubscribed. There is no automatic removal.</span></div>
+      <div class="safety-item"><span class="check">&#10003;</span><span>Revoke access any time from your Google Account settings.</span></div>
+    </div>
+  </div>
+</section>
+<section class="cta">
+  <div class="section-inner">
+    <h2>Start Cleaning Up Today</h2>
+    <p>Completely free. All you need is a Google account.</p>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.sangwwoo.youtubesubcleaner" target="_blank">Download on Google Play</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-links">
+    <a href="/youtubesubcleaner/privacy-policy.html">Privacy Policy</a>
+    <a href="/youtubesubcleaner/terms-of-service.html">Terms of Service</a>
+    <a href="mailto:sangwwoo84@gmail.com">Contact</a>
+    <a href="/en/">&larr; devkorea1m.com</a>
+  </div>
+  <p>&copy; 2026 Youtube Sub Cleaner &nbsp;&middot;&nbsp; Developer: Devkorea1m</p>
+</footer>
+</body>
+</html>
