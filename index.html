@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+    <script>
+          (function() {
+                  var lang = navigator.language || navigator.userLanguage || 'ko';
+                  if (!lang.startsWith('ko') && location.pathname === '/') {
+                            location.replace('/en/');
+                  }
+          })();
+    </script>
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devkorea1m — 복잡한 일상을 단순하게</title>
   <!-- Open Graph -->
