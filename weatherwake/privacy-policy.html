@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeatherWake — 개인정보처리방침</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -15,15 +15,15 @@
     .nav-logo span { color: var(--blue); }
     .nav-back { color: var(--gray-600); font-size: 13px; }
     .nav-back:hover { color: var(--gray-900); text-decoration: none; }
-    .hero { background: var(--blue); color: white; text-align: center; padding: 48px 24px 40px; }
+    .hero { background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%); color: white; text-align: center; padding: 48px 24px 40px; }
     .hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
-    .hero p { font-size: 14px; opacity: 0.85; }
-    .container { max-width: 760px; margin: 40px auto 80px; padding: 0 24px; display: flex; flex-direction: column; gap: 24px; }
-    .card { background: var(--white); border-radius: 12px; border: 1px solid var(--gray-200); overflow: hidden; }
-    .card-head { padding: 16px 22px; border-bottom: 1px solid var(--gray-200); background: var(--gray-100); display: flex; align-items: center; gap: 10px; }
-    .card-num { width: 26px; height: 26px; background: var(--blue); color: white; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
-    .card-head h2 { font-size: 15px; font-weight: 700; }
-    .card-body { padding: 22px; color: #374151; font-size: 14.5px; }
+    .hero p { font-size: 13.5px; opacity: 0.85; }
+    .container { max-width: 720px; margin: 0 auto; padding: 28px 20px 60px; display: flex; flex-direction: column; gap: 20px; }
+    .card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; overflow: hidden; }
+    .card-header { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 1px solid var(--gray-200); background: var(--gray-100); }
+    .card-num { width: 24px; height: 24px; background: var(--blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+    .card-header h2 { font-size: 15px; font-weight: 700; }
+    .card-body { padding: 18px 20px; font-size: 14.5px; color: #333; }
     .card-body p { margin-bottom: 12px; }
     .card-body p:last-child { margin-bottom: 0; }
     .card-body ul { padding-left: 20px; margin-top: 8px; }
@@ -47,34 +47,35 @@
 
 <div class="hero">
   <h1>개인정보처리방침</h1>
-  <p>개발자: Devkorea1m &nbsp;·&nbsp; 문의: sangwwoo84@gmail.com</p>
+  <p>개발자: Devkorea1m · 문의: sangwwoo84@gmail.com</p>
 </div>
 
 <div class="container">
 
+  <!-- ==================== 🇰🇷 한국어 ==================== -->
   <div class="lang-divider">🇰🇷 한국어</div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">1</div><h2>개요</h2></div>
+    <div class="card-header"><div class="card-num">1</div><h2>개요</h2></div>
     <div class="card-body">
       <p>WeatherWake(이하 "앱")는 날씨 정보를 기반으로 알람 시각을 자동 조정하는 Android 알람 앱입니다. 본 개인정보처리방침은 앱이 수집·이용·보관하는 정보를 설명합니다.</p>
-      <p>최종 업데이트: 2026년 4월 8일 &nbsp;·&nbsp; 앱명: WeatherWake &nbsp;·&nbsp; 개발자: Devkorea1m</p>
+      <p>최종 업데이트: 2026년 4월 23일 · 앱명: WeatherWake · 개발자: Devkorea1m · 버전: v1.2</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">2</div><h2>수집하는 정보</h2></div>
+    <div class="card-header"><div class="card-num">2</div><h2>수집하는 정보</h2></div>
     <div class="card-body">
       <p>앱은 다음 정보를 수집합니다:</p>
       <ul>
-        <li>위치 정보 (GPS 또는 사용자가 직접 설정한 위치) — 날씨 조회 목적</li>
+        <li>위치 정보 (대략적 위치 또는 사용자가 직접 설정한 위치) — 날씨 조회 목적</li>
         <li>알람 설정 데이터 (시각, 요일, 날씨 연동 설정, 선행 시간) — 기기 내부에만 저장</li>
       </ul>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">3</div><h2>수집하지 않는 정보</h2></div>
+    <div class="card-header"><div class="card-num">3</div><h2>수집하지 않는 정보</h2></div>
     <div class="card-body">
       <ul>
         <li>이름, 이메일, 전화번호 등 개인 식별 정보</li>
@@ -87,10 +88,10 @@
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">4</div><h2>정보 이용 목적</h2></div>
+    <div class="card-header"><div class="card-num">4</div><h2>정보 이용 목적</h2></div>
     <div class="card-body">
       <ul>
-        <li>현재 위치 또는 설정된 위치의 날씨 조회 (OpenWeatherMap API 호출)</li>
+        <li>현재 위치 또는 설정된 위치의 날씨 조회 (날씨 API 호출)</li>
         <li>비 또는 눈 예보 시 알람 시각 자동 조정</li>
         <li>알람 설정 저장 및 복원</li>
       </ul>
@@ -98,38 +99,47 @@
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">5</div><h2>정보 저장 및 보안</h2></div>
+    <div class="card-header"><div class="card-num">5</div><h2>정보 저장 및 보안</h2></div>
     <div class="card-body">
       <p>알람 설정 데이터는 사용자의 기기 내에만 저장되며, 외부 서버로 전송되거나 저장되지 않습니다.</p>
-      <p>위치 정보는 날씨 API 호출에만 사용되며, 호출 이후 기기에 장기 보관되지 않습니다. 사용자가 수동으로 설정한 위치는 기기 내 SharedPreferences에 저장됩니다.</p>
+      <p>위치 정보는 알람 90분 전 날씨 API 호출에만 사용되며, 호출 이후 기기에 장기 보관되지 않습니다. 사용자가 수동으로 설정한 위치는 기기 내 SharedPreferences에 저장됩니다.</p>
       <p>앱 삭제 시 모든 저장 데이터가 즉시 삭제됩니다.</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">6</div><h2>제3자 서비스</h2></div>
+    <div class="card-header"><div class="card-num">6</div><h2>제3자 서비스</h2></div>
     <div class="card-body">
       <p>앱은 다음 제3자 서비스를 사용합니다:</p>
       <table>
-        <thead><tr><th>서비스</th><th>제공사</th><th>목적</th></tr></thead>
+        <thead><tr><th>서비스</th><th>제공사</th><th>전송 정보</th><th>적용 조건</th></tr></thead>
         <tbody>
-          <tr><td>OpenWeatherMap API</td><td>OpenWeather Ltd.</td><td>날씨 데이터 조회 (위치 좌표 전달)</td></tr>
+          <tr><td>OpenWeatherMap API</td><td>OpenWeather Ltd.</td><td>위도·경도 좌표</td><td>모든 지역 (항상 호출)</td></tr>
+          <tr><td>초단기실황 API</td><td>기상청 공공데이터포털</td><td>격자 좌표 nx·ny</td><td>한국 지역일 때만</td></tr>
+          <tr><td>Points / Observations API</td><td>US National Weather Service</td><td>위도·경도, User-Agent 헤더</td><td>미국 지역일 때만</td></tr>
         </tbody>
       </table>
-      <p style="margin-top:12px; font-size:13px; color:#6b7280;">OpenWeatherMap의 개인정보처리방침: <a href="https://openweathermap.org/privacy-policy" target="_blank">openweathermap.org/privacy-policy</a></p>
+      <p style="margin-top:12px; font-size:13px;">
+        각 공급자 개인정보처리방침:<br>
+        • OpenWeatherMap — <a href="https://openweathermap.org/privacy-policy" target="_blank">openweathermap.org/privacy-policy</a><br>
+        • 공공데이터포털 — <a href="https://www.data.go.kr/ugs/selectPortalInfoView.do" target="_blank">data.go.kr</a><br>
+        • US NWS — <a href="https://www.weather.gov/privacy" target="_blank">weather.gov/privacy</a>
+      </p>
+      <p style="font-size:13px;">모든 경우 좌표 외에 식별 가능한 개인정보는 전송되지 않습니다. NWS에는 앱 식별용 User-Agent 헤더(앱 이름 + 브랜드 사이트 URL)가 추가 전송됩니다.</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">7</div><h2>위치 정보 권한</h2></div>
+    <div class="card-header"><div class="card-num">7</div><h2>위치 정보 권한</h2></div>
     <div class="card-body">
-      <p>앱은 날씨 조회를 위해 기기의 위치 접근 권한을 요청합니다. 위치 정보는 OpenWeatherMap API에 날씨 조회 시에만 전달되며, 그 외 목적으로 사용되지 않습니다.</p>
+      <p>앱은 날씨 조회를 위해 기기의 <strong>대략적 위치</strong> 접근 권한을 요청합니다. 위치 정보는 날씨 API 호출 시에만 전달되며, 그 외 목적으로 사용되지 않습니다.</p>
+      <p>한국 지역에서는 위경도를 5km 해상도 격자 좌표(nx·ny)로 변환하여 기상청에 전송하므로, 정확한 위치가 아닌 대략적 지역만 노출됩니다.</p>
       <p>위치 권한을 허용하지 않을 경우, 수동으로 위치를 직접 설정하여 앱을 사용할 수 있습니다.</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">8</div><h2>사용자의 권리</h2></div>
+    <div class="card-header"><div class="card-num">8</div><h2>사용자의 권리</h2></div>
     <div class="card-body">
       <ul>
         <li>Android 설정에서 앱의 위치 권한을 언제든지 취소할 수 있습니다.</li>
@@ -140,41 +150,42 @@
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">9</div><h2>아동 개인정보</h2></div>
+    <div class="card-header"><div class="card-num">9</div><h2>아동 개인정보</h2></div>
     <div class="card-body">
       <p>앱은 만 14세 미만 아동을 대상으로 하지 않으며, 의도적으로 아동의 개인정보를 수집하지 않습니다.</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">10</div><h2>문의</h2></div>
+    <div class="card-header"><div class="card-num">10</div><h2>문의</h2></div>
     <div class="card-body">
       <p>개인정보 관련 문의: <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a></p>
     </div>
   </div>
 
+  <!-- ==================== 🇺🇸 English ==================== -->
   <div class="lang-divider">🇺🇸 English</div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">1</div><h2>Overview</h2></div>
+    <div class="card-header"><div class="card-num">1</div><h2>Overview</h2></div>
     <div class="card-body">
       <p>WeatherWake ("the App") is an Android alarm app that automatically adjusts alarm times based on weather conditions. This Privacy Policy explains what information the App collects, uses, and stores.</p>
-      <p>Last updated: April 8, 2026 &nbsp;·&nbsp; App: WeatherWake &nbsp;·&nbsp; Developer: Devkorea1m</p>
+      <p>Last updated: April 23, 2026 · App: WeatherWake · Developer: Devkorea1m · Version: v1.2</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">2</div><h2>Information we collect</h2></div>
+    <div class="card-header"><div class="card-num">2</div><h2>Information we collect</h2></div>
     <div class="card-body">
       <ul>
-        <li>Location data (GPS or manually set location) — used solely for weather lookup</li>
+        <li>Location data (approximate location or manually set location) — used solely for weather lookup</li>
         <li>Alarm settings (time, repeat days, weather trigger options, advance minutes) — stored on device only</li>
       </ul>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">3</div><h2>Information we do not collect</h2></div>
+    <div class="card-header"><div class="card-num">3</div><h2>Information we do not collect</h2></div>
     <div class="card-body">
       <ul>
         <li>Personal identifiers such as name, email, or phone number</li>
@@ -187,10 +198,10 @@
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">4</div><h2>How we use your information</h2></div>
+    <div class="card-header"><div class="card-num">4</div><h2>How we use your information</h2></div>
     <div class="card-body">
       <ul>
-        <li>Fetching weather data for the current or user-set location via OpenWeatherMap API</li>
+        <li>Fetching weather data for the current or user-set location via weather APIs</li>
         <li>Automatically advancing alarm times when rain or snow is forecast</li>
         <li>Storing and restoring alarm settings on the device</li>
       </ul>
@@ -198,35 +209,47 @@
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">5</div><h2>Data storage and security</h2></div>
+    <div class="card-header"><div class="card-num">5</div><h2>Data storage and security</h2></div>
     <div class="card-body">
       <p>All alarm settings are stored only on the user's device and are never transmitted to or stored on external servers.</p>
-      <p>Location data is passed to the OpenWeatherMap API only at the time of a weather check and is not retained on the device long-term. Manually set locations are saved in device SharedPreferences.</p>
+      <p>Location data is passed to weather APIs only 90 minutes before a scheduled alarm for a weather check, and is not retained on the device long-term. Manually set locations are saved in device SharedPreferences.</p>
       <p>Uninstalling the App immediately deletes all stored data.</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">6</div><h2>Third-party services</h2></div>
+    <div class="card-header"><div class="card-num">6</div><h2>Third-party services</h2></div>
     <div class="card-body">
-      <p>The App uses the following third-party service:</p>
-      <ul>
-        <li>OpenWeatherMap API (OpenWeather Ltd.) — weather data retrieval (location coordinates are transmitted)</li>
-      </ul>
-      <p style="margin-top:10px; font-size:13px; color:#6b7280;">OpenWeatherMap Privacy Policy: <a href="https://openweathermap.org/privacy-policy" target="_blank">openweathermap.org/privacy-policy</a></p>
+      <p>The App uses the following third-party services:</p>
+      <table>
+        <thead><tr><th>Service</th><th>Provider</th><th>Data transmitted</th><th>When used</th></tr></thead>
+        <tbody>
+          <tr><td>OpenWeatherMap API</td><td>OpenWeather Ltd.</td><td>Latitude, longitude</td><td>All regions (always)</td></tr>
+          <tr><td>Ultra-short-term API</td><td>Korea Meteorological Administration (data.go.kr)</td><td>Grid coordinates (nx, ny)</td><td>Korea region only</td></tr>
+          <tr><td>Points / Observations API</td><td>US National Weather Service</td><td>Latitude, longitude, User-Agent header</td><td>US region only</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:12px; font-size:13px;">
+        Provider privacy policies:<br>
+        • OpenWeatherMap — <a href="https://openweathermap.org/privacy-policy" target="_blank">openweathermap.org/privacy-policy</a><br>
+        • Korea Public Data Portal — <a href="https://www.data.go.kr/ugs/selectPortalInfoView.do" target="_blank">data.go.kr</a><br>
+        • US NWS — <a href="https://www.weather.gov/privacy" target="_blank">weather.gov/privacy</a>
+      </p>
+      <p style="font-size:13px;">In all cases, no personally identifiable information is transmitted beyond location coordinates. The NWS additionally receives a User-Agent header containing the app name and developer website URL for identification purposes.</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">7</div><h2>Location permission</h2></div>
+    <div class="card-header"><div class="card-num">7</div><h2>Location permission</h2></div>
     <div class="card-body">
-      <p>The App requests access to your device's location in order to look up local weather. Location data is transmitted to the OpenWeatherMap API only at the time of a weather check and is not used for any other purpose.</p>
+      <p>The App requests access to your device's <strong>approximate location</strong> in order to look up local weather. Location data is transmitted to weather APIs only at the time of a weather check and is not used for any other purpose.</p>
+      <p>For users in Korea, latitude and longitude are converted into 5 km resolution grid coordinates (nx, ny) before being sent to the Korea Meteorological Administration, so only an approximate area — not a precise position — is exposed.</p>
       <p>If you prefer not to grant location permission, you can manually enter a location in the App's settings.</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">8</div><h2>Your rights</h2></div>
+    <div class="card-header"><div class="card-num">8</div><h2>Your rights</h2></div>
     <div class="card-body">
       <ul>
         <li>You may revoke location permission at any time in Android Settings.</li>
@@ -237,14 +260,14 @@
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">9</div><h2>Children's privacy</h2></div>
+    <div class="card-header"><div class="card-num">9</div><h2>Children's privacy</h2></div>
     <div class="card-body">
       <p>The App is not directed at children under the age of 13, and we do not knowingly collect personal information from children.</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-num">10</div><h2>Contact</h2></div>
+    <div class="card-header"><div class="card-num">10</div><h2>Contact</h2></div>
     <div class="card-body">
       <p>For privacy inquiries: <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a></p>
     </div>
@@ -254,8 +277,8 @@
 
 <footer>
   <div class="footer-links">
-    <a href="/weatherwake/">WeatherWake</a>
-    <a href="/weatherwake/terms-of-service.html">서비스 이용 약관</a>
+    <a href="/weatherwake">WeatherWake</a>
+    <a href="/weatherwake/terms">서비스 이용 약관</a>
     <a href="mailto:sangwwoo84@gmail.com">문의</a>
     <a href="/">← devkorea1m.com</a>
   </div>
