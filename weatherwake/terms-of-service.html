@@ -1,194 +1,207 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WeatherWake — 서비스 이용 약관</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --blue: #3B82F6; --gray-100: #f7f7f7; --gray-200: #eeeeee; --gray-600: #666; --gray-900: #111; --white: #fff; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif; color: var(--gray-900); background: var(--gray-100); line-height: 1.8; font-size: 15px; }
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-200); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; font-size: 14px; }
-    .nav-logo { font-size: 16px; font-weight: 700; }
-    .nav-logo span { color: var(--blue); }
-    .nav-back { color: var(--gray-600); font-size: 13px; }
-    .nav-back:hover { color: var(--gray-900); text-decoration: none; }
-    .hero { background: var(--blue); color: white; text-align: center; padding: 48px 24px 40px; }
-    .hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
-    .hero p { font-size: 14px; opacity: 0.85; }
-    .container { max-width: 760px; margin: 40px auto 80px; padding: 0 24px; display: flex; flex-direction: column; gap: 24px; }
-    .card { background: var(--white); border-radius: 12px; border: 1px solid var(--gray-200); overflow: hidden; }
-    .card-head { padding: 16px 22px; border-bottom: 1px solid var(--gray-200); background: var(--gray-100); display: flex; align-items: center; gap: 10px; }
-    .card-num { width: 26px; height: 26px; background: var(--blue); color: white; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
-    .card-head h2 { font-size: 15px; font-weight: 700; }
-    .card-body { padding: 22px; color: #374151; font-size: 14.5px; }
-    .card-body p { margin-bottom: 12px; }
-    .card-body p:last-child { margin-bottom: 0; }
-    .card-body ul { padding-left: 20px; margin-top: 8px; }
-    .card-body ul li { margin-bottom: 6px; }
-    footer { text-align: center; padding: 28px 24px; border-top: 1px solid var(--gray-200); background: var(--white); font-size: 13px; color: var(--gray-600); }
-    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
-    .footer-links a { color: var(--gray-600); }
-    .footer-links a:hover { color: var(--gray-900); text-decoration: underline; }
-    .lang-divider { text-align: center; padding: 12px 0 4px; color: var(--gray-600); font-size: 13px; letter-spacing: 1px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWake — 서비스 이용 약관</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --blue: #3B82F6; --gray-100: #f7f7f7; --gray-200: #eeeeee; --gray-600: #666; --gray-900: #111; --white: #fff; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif; color: var(--gray-900); background: var(--gray-100); line-height: 1.8; font-size: 15px; }
+        a { color: var(--blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-200); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; font-size: 14px; }
+        .nav-logo { font-size: 16px; font-weight: 700; }
+        .nav-logo span { color: var(--blue); }
+        .nav-back { color: var(--gray-600); font-size: 13px; }
+        .nav-back:hover { color: var(--gray-900); text-decoration: none; }
+        .hero { background: var(--blue); color: white; text-align: center; padding: 48px 24px 40px; }
+        .hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .hero p { font-size: 14px; opacity: 0.85; }
+        .container { max-width: 760px; margin: 40px auto 80px; padding: 0 24px; display: flex; flex-direction: column; gap: 24px; }
+        .card { background: var(--white); border-radius: 12px; border: 1px solid var(--gray-200); overflow: hidden; }
+        .card-head { padding: 16px 22px; border-bottom: 1px solid var(--gray-200); background: var(--gray-100); display: flex; align-items: center; gap: 10px; }
+        .card-num { width: 26px; height: 26px; background: var(--blue); color: white; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+        .card-head h2 { font-size: 15px; font-weight: 700; }
+        .card-body { padding: 22px; color: #374151; font-size: 14.5px; }
+        .card-body p { margin-bottom: 12px; }
+        .card-body p:last-child { margin-bottom: 0; }
+        .card-body ul { padding-left: 20px; margin-top: 8px; }
+        .card-body ul li { margin-bottom: 6px; }
+        footer { text-align: center; padding: 28px 24px; border-top: 1px solid var(--gray-200); background: var(--white); font-size: 13px; color: var(--gray-600); }
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
+        .footer-links a { color: var(--gray-600); }
+        .footer-links a:hover { color: var(--gray-900); text-decoration: underline; }
+        .lang-divider { text-align: center; padding: 12px 0 4px; color: var(--gray-600); font-size: 13px; letter-spacing: 1px; }
+    </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo">Weather<span>Wake</span></span>
-  <a class="nav-back" href="/">← devkorea1m.com</a>
+    <span class="nav-logo">Weather<span>Wake</span></span>
+    <a class="nav-back" href="/">← devkorea1m.com</a>
 </nav>
 
 <div class="hero">
-  <h1>서비스 이용 약관</h1>
-  <p>개발자: Devkorea1m &nbsp;·&nbsp; 문의: sangwwoo84@gmail.com</p>
+    <h1>서비스 이용 약관</h1>
+    <p style="font-size:15px; opacity:0.9; margin-bottom:6px;">Terms of Service</p>
+    <p>개발자: Devkorea1m &nbsp;·&nbsp; 문의: sangwwoo84@gmail.com</p>
 </div>
 
 <div class="container">
 
-  <div class="lang-divider">🇰🇷 한국어</div>
+    <div class="lang-divider">🇰🇷 한국어</div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">1</div><h2>약관 동의</h2></div>
-    <div class="card-body">
-      <p>WeatherWake(이하 "앱")를 설치하거나 사용함으로써 본 이용 약관에 동의하는 것으로 간주합니다. 약관에 동의하지 않으시면 앱을 사용하지 마십시오.</p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">1</div><h2>약관 동의</h2></div>
+        <div class="card-body">
+            <p>WeatherWake(이하 "앱")를 설치하거나 사용함으로써 본 이용 약관에 동의하는 것으로 간주합니다. 약관에 동의하지 않으시면 앱을 사용하지 마십시오.</p>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">2</div><h2>서비스 설명</h2></div>
-    <div class="card-body">
-      <p>앱은 날씨 정보를 기반으로 알람 시각을 자동으로 조정하는 Android 알람 애플리케이션입니다. 비 또는 눈이 예보된 날, 사용자가 설정한 선행 시간만큼 알람을 앞당겨 여유로운 준비 시간을 제공합니다.</p>
-      <p>앱은 OpenWeatherMap API를 통해 날씨 데이터를 조회하며, 계정 로그인 없이 사용할 수 있습니다.</p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">2</div><h2>서비스 설명</h2></div>
+        <div class="card-body">
+            <p>앱은 날씨 정보를 기반으로 알람 시각을 자동으로 조정하는 Android 알람 애플리케이션입니다. 비 또는 눈이 예보된 날, 사용자가 설정한 선행 시간만큼 알람을 앞당겨 여유로운 준비 시간을 제공합니다.</p>
+            <p>앱은 지역에 따라 다음 날씨 API를 통해 데이터를 조회합니다:</p>
+            <ul>
+                <li>기상청(KMA) — 한국 지역</li>
+                <li>NWS(National Weather Service) — 미국 지역</li>
+                <li>OpenWeatherMap — 그 외 글로벌 지역</li>
+            </ul>
+            <p>계정 로그인 없이 사용할 수 있습니다.</p>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">3</div><h2>위치 정보 이용</h2></div>
-    <div class="card-body">
-      <p>앱은 날씨 조회를 위해 기기의 위치 접근 권한을 요청할 수 있습니다. 위치 정보는 날씨 API 호출에만 사용되며, 그 외 목적으로 수집·저장·공유되지 않습니다.</p>
-      <p>위치 권한을 허용하지 않을 경우, 수동으로 위치를 설정하여 앱을 사용할 수 있습니다.</p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">3</div><h2>위치 정보 이용</h2></div>
+        <div class="card-body">
+            <p>앱은 날씨 조회를 위해 기기의 대략적 위치(approximate location) 접근 권한을 요청할 수 있습니다. 정밀한 GPS 위치는 사용하지 않습니다. 위치 정보는 날씨 API 호출에만 사용되며, 그 외 목적으로 수집·저장·공유되지 않습니다.</p>
+            <p>위치 권한을 허용하지 않을 경우, 수동으로 위치를 설정하여 앱을 사용할 수 있습니다.</p>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">4</div><h2>사용자 책임</h2></div>
-    <div class="card-body">
-      <p>앱은 날씨 데이터에 기반하여 알람을 자동 조정하지만, 다음 사항은 사용자의 책임 하에 있습니다:</p>
-      <ul>
-        <li>날씨 API의 예보 정확도에 따라 알람 조정 결과가 달라질 수 있습니다.</li>
-        <li>앱 오작동, 기기 절전 모드, 네트워크 불량 등으로 인해 알람이 정상 작동하지 않을 수 있습니다.</li>
-        <li>중요한 일정에 대해서는 별도의 알람 수단을 병행 사용하시기 바랍니다.</li>
-      </ul>
+    <div class="card">
+        <div class="card-head"><div class="card-num">4</div><h2>사용자 책임</h2></div>
+        <div class="card-body">
+            <p>앱은 날씨 데이터에 기반하여 알람을 자동 조정하지만, 다음 사항은 사용자의 책임 하에 있습니다:</p>
+            <ul>
+                <li>날씨 API의 예보 정확도에 따라 알람 조정 결과가 달라질 수 있습니다.</li>
+                <li>앱 오작동, 기기 절전 모드, 네트워크 불량 등으로 인해 알람이 정상 작동하지 않을 수 있습니다.</li>
+                <li>중요한 일정에 대해서는 별도의 알람 수단을 병행 사용하시기 바랍니다.</li>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">5</div><h2>서비스 제한 및 면책</h2></div>
-    <div class="card-body">
-      <p>앱은 OpenWeatherMap API의 정책 및 가용성에 따라 운영됩니다. 다음의 경우 개발자는 책임을 지지 않습니다:</p>
-      <ul>
-        <li>날씨 예보의 부정확으로 인한 알람 미조정 또는 오조정</li>
-        <li>네트워크 오류, 기기 절전 모드, OS 제한으로 인한 알람 미작동</li>
-        <li>앱 사용으로 인해 발생하는 간접적 손해 (지각, 약속 불이행 등)</li>
-        <li>외부 API 서비스 중단으로 인한 날씨 데이터 미수신</li>
-      </ul>
+    <div class="card">
+        <div class="card-head"><div class="card-num">5</div><h2>서비스 제한 및 면책</h2></div>
+        <div class="card-body">
+            <p>앱은 기상청(KMA), NWS, OpenWeatherMap 등 외부 날씨 API의 정책 및 가용성에 따라 운영됩니다. 다음의 경우 개발자는 책임을 지지 않습니다:</p>
+            <ul>
+                <li>날씨 예보의 부정확으로 인한 알람 미조정 또는 오조정</li>
+                <li>네트워크 오류, 기기 절전 모드, OS 제한으로 인한 알람 미작동</li>
+                <li>앱 사용으로 인해 발생하는 간접적 손해 (지각, 약속 불이행 등)</li>
+                <li>외부 API 서비스 중단으로 인한 날씨 데이터 미수신</li>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">6</div><h2>약관 변경</h2></div>
-    <div class="card-body">
-      <p>개발자는 필요에 따라 본 약관을 수정할 수 있으며, 변경된 약관은 앱 업데이트 또는 공지를 통해 안내됩니다. 변경 후에도 앱을 계속 사용하시면 변경된 약관에 동의하는 것으로 간주합니다.</p>
-      <p>최종 업데이트: 2026년 4월 8일</p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">6</div><h2>약관 변경</h2></div>
+        <div class="card-body">
+            <p>개발자는 필요에 따라 본 약관을 수정할 수 있으며, 변경된 약관은 앱 업데이트 또는 공지를 통해 안내됩니다. 변경 후에도 앱을 계속 사용하시면 변경된 약관에 동의하는 것으로 간주합니다.</p>
+            <p>최종 업데이트: 2026년 4월 23일</p>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">7</div><h2>문의</h2></div>
-    <div class="card-body">
-      <p>서비스 관련 문의: <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a></p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">7</div><h2>문의</h2></div>
+        <div class="card-body">
+            <p>서비스 관련 문의: <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a></p>
+        </div>
     </div>
-  </div>
 
-  <div class="lang-divider">🇺🇸 English</div>
+    <div class="lang-divider">🇺🇸 English</div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">1</div><h2>Acceptance of Terms</h2></div>
-    <div class="card-body">
-      <p>By installing or using WeatherWake ("the App"), you agree to these Terms of Service. If you do not agree, please do not use the App.</p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">1</div><h2>Acceptance of Terms</h2></div>
+        <div class="card-body">
+            <p>By installing or using WeatherWake ("the App"), you agree to these Terms of Service. If you do not agree, please do not use the App.</p>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">2</div><h2>Service Description</h2></div>
-    <div class="card-body">
-      <p>The App is an Android alarm application that automatically adjusts alarm times based on weather forecasts. When rain or snow is predicted, the App advances the alarm by the user-configured lead time to allow extra preparation time.</p>
-      <p>The App uses the OpenWeatherMap API for weather data and does not require any account login.</p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">2</div><h2>Service Description</h2></div>
+        <div class="card-body">
+            <p>The App is an Android alarm application that automatically adjusts alarm times based on weather forecasts. When rain or snow is predicted, the App advances the alarm by the user-configured lead time to allow extra preparation time.</p>
+            <p>The App retrieves weather data from the following APIs depending on your region:</p>
+            <ul>
+                <li>KMA (Korea Meteorological Administration) — South Korea</li>
+                <li>NWS (National Weather Service) — United States</li>
+                <li>OpenWeatherMap — all other regions worldwide</li>
+            </ul>
+            <p>No account login is required.</p>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">3</div><h2>Location data</h2></div>
-    <div class="card-body">
-      <p>The App may request access to your device's location to fetch local weather data. Location information is used solely for weather API calls and is not collected, stored long-term, or shared for any other purpose.</p>
-      <p>If you prefer not to grant location permission, you can manually specify a location in the App settings.</p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">3</div><h2>Location Data</h2></div>
+        <div class="card-body">
+            <p>The App may request access to your device's approximate location to fetch local weather data. The App does not use precise GPS location. Location information is used solely for weather API calls and is not collected, stored long-term, or shared for any other purpose.</p>
+            <p>If you prefer not to grant location permission, you can manually specify a location in the App settings.</p>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">4</div><h2>User responsibility</h2></div>
-    <div class="card-body">
-      <p>While the App adjusts alarms automatically based on weather data, the following remain the user's responsibility:</p>
-      <ul>
-        <li>Alarm adjustments depend on the accuracy of the weather forecast, which may vary.</li>
-        <li>Device power-saving modes, network issues, or OS restrictions may prevent the App from functioning correctly.</li>
-        <li>For critical appointments, we recommend using additional alarm methods as a backup.</li>
-      </ul>
+    <div class="card">
+        <div class="card-head"><div class="card-num">4</div><h2>User Responsibility</h2></div>
+        <div class="card-body">
+            <p>While the App adjusts alarms automatically based on weather data, the following remain the user's responsibility:</p>
+            <ul>
+                <li>Alarm adjustments depend on the accuracy of the weather forecast, which may vary.</li>
+                <li>Device power-saving modes, network issues, or OS restrictions may prevent the App from functioning correctly.</li>
+                <li>For critical appointments, we recommend using additional alarm methods as a backup.</li>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">5</div><h2>Limitations &amp; disclaimer</h2></div>
-    <div class="card-body">
-      <p>The App operates subject to the policies and availability of the OpenWeatherMap API. The developer is not liable for:</p>
-      <ul>
-        <li>Missed or incorrect alarm adjustments due to inaccurate weather forecasts</li>
-        <li>Alarm failures caused by network errors, device power-saving modes, or OS restrictions</li>
-        <li>Indirect damages arising from App use (e.g., being late for work or appointments)</li>
-        <li>Failure to receive weather data due to third-party API outages</li>
-      </ul>
+    <div class="card">
+        <div class="card-head"><div class="card-num">5</div><h2>Limitations &amp; Disclaimer</h2></div>
+        <div class="card-body">
+            <p>The App operates subject to the policies and availability of external weather APIs, including KMA, NWS, and OpenWeatherMap. The developer is not liable for:</p>
+            <ul>
+                <li>Missed or incorrect alarm adjustments due to inaccurate weather forecasts</li>
+                <li>Alarm failures caused by network errors, device power-saving modes, or OS restrictions</li>
+                <li>Indirect damages arising from App use (e.g., being late for work or appointments)</li>
+                <li>Failure to receive weather data due to third-party API outages</li>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">6</div><h2>Changes to Terms</h2></div>
-    <div class="card-body">
-      <p>The developer may update these Terms as needed. Changes will be communicated through app updates or notices. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
-      <p>Last updated: April 8, 2026</p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">6</div><h2>Changes to Terms</h2></div>
+        <div class="card-body">
+            <p>The developer may update these Terms as needed. Changes will be communicated through app updates or notices. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
+            <p>Last updated: April 23, 2026</p>
+        </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-head"><div class="card-num">7</div><h2>Contact</h2></div>
-    <div class="card-body">
-      <p>For inquiries: <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a></p>
+    <div class="card">
+        <div class="card-head"><div class="card-num">7</div><h2>Contact</h2></div>
+        <div class="card-body">
+            <p>For inquiries: <a href="mailto:sangwwoo84@gmail.com">sangwwoo84@gmail.com</a></p>
+        </div>
     </div>
-  </div>
 
 </div>
 
 <footer>
-  <div class="footer-links">
-    <a href="/weatherwake/">WeatherWake</a>
-    <a href="/weatherwake/privacy-policy.html">개인정보처리방침</a>
-    <a href="mailto:sangwwoo84@gmail.com">문의</a>
-    <a href="/">← devkorea1m.com</a>
-  </div>
-  <p>© 2026 Devkorea1m</p>
+    <div class="footer-links">
+        <a href="/weatherwake/">WeatherWake</a>
+        <a href="/weatherwake/privacy-policy.html">개인정보처리방침</a>
+        <a href="mailto:sangwwoo84@gmail.com">문의</a>
+        <a href="/">← devkorea1m.com</a>
+    </div>
+    <p>© 2026 Devkorea1m</p>
 </footer>
 
 </body>
